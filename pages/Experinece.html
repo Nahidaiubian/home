@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A N M Nahid Hasan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #27ae60;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .no-underline {
+      text-decoration: none; /* Removes the underline */
+      color: inherit; /* Inherits the text color from the parent */
+        }
+        .no-underline:hover {
+      text-decoration: underline; /* Adds underline on hover */
+    }
+
+        /* Navigation */
+        .sidebar {
+            width: 300px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: var(--primary-color);
+            padding: 1rem;
+            color: white;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .nav-links {
+            margin-top: .5rem;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 300px;
+            padding: 3rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+        .icon {
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+  object-fit: contain; /* Ensures the image fits properly */
+}
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 770px) {
+            .sidebar {
+                width: 100%;
+                position: static;
+                padding: 2rem 1rem;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+    <style>
+        .social-links {
+          text-align: right;
+          border-radius: 10px;
+          max-width: 150px;
+          margin: 20px auto;
+        }
+        
+        .social-list {
+          list-style: none;
+          padding: 0;
+          margin: 15px 0 0;
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+        }
+        
+        .social-item a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: #fff;
+          color: white;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .social-item a:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Individual platform colors */
+        .email a { background: #46471b; }
+        .facebook a { background: #3b5998; }
+        .linkedin a { background: #0077b5; }
+        .researchgate a { background: #00ccbb; }
+        
+        /* Hover effects */
+        .facebook a:hover { background: #2d4373; }
+        .linkedin a:hover { background: #005582; }
+        .researchgate a:hover { background: #00b3a4; }
+        
+        .social-links h3 {
+          margin: 0 0 15px;
+          color: #333;
+          font-size: 1.2em;
+        }
+        </style>
+         <style>
+            .research-interests {
+              padding: 2rem;
+              background: #f8f9fa;
+              border-radius: 12px;
+              margin: 2rem 0;
+            }
+            
+            .research-interests h2 {
+              color: #2c3e50;
+              border-bottom: 3px solid #3498db;
+              padding-bottom: 0.5rem;
+              margin-bottom: 1.5rem;
+              font-size: 1.8rem;
+            }
+            
+            .interest-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 1rem;
+              list-style: none;
+              padding: 0;
+            }
+            
+            .interest-item {
+              padding: 1.2rem;
+              border-radius: 8px;
+              background: white;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+              transition: transform 0.2s ease;
+              position: relative;
+              font-weight: 500;
+            }
+            
+            .interest-item:hover {
+              transform: translateY(-3px);
+            }
+            
+            .subpoint {
+              display: block;
+              font-size: 0.9em;
+              color: #7f8c8d;
+              margin-top: 0.5rem;
+            }
+            
+            /* Category-based color coding */
+            .technical { border-left: 4px solid #3498db; }
+            .security { border-left: 4px solid #e74c3c; }
+            .analysis { border-left: 4px solid #2ecc71; }
+            .data { border-left: 4px solid #f1c40f; }
+            .management { border-left: 4px solid #9b59b6; }
+            
+            @media (max-width: 768px) {
+              .interest-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+            </style>
+            <style>
+                .expertise-section {
+                  padding: 2rem;
+                  background: #f8f9fa;
+                }
+                
+                .expertise-section h2 {
+                  color: #2c3e50;
+                  border-bottom: 3px solid #3498db;
+                  padding-bottom: 0.5rem;
+                  margin-bottom: 2rem;
+                  font-size: 2rem;
+                }
+                
+                .expertise-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                  gap: 1.5rem;
+                }
+                
+                .expertise-category {
+                  background: white;
+                  padding: 1.5rem;
+                  border-radius: 10px;
+                  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                }
+                
+                .expertise-category h3 {
+                  color: white;
+                  padding: 0.5rem 1rem;
+                  border-radius: 5px;
+                  margin: -1.5rem -1.5rem 1.5rem;
+                }
+                
+                .ai-ml h3 { background: #b0ed4d; }
+                .development h3 { background: #3498db; }
+                .data-science h3 { background: #2ecc71; }
+                .engineering h3 { background: #9b59b6; }
+                .nlp h3 { background: #f1c40f; }
+                
+                .expertise-category ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  columns: 2;
+                  column-gap: 1rem;
+                }
+                
+                .expertise-category li {
+                  padding: 0.3rem 0;
+                  break-inside: avoid;
+                  font-size: 0.95rem;
+                }
+
+                .expertise-category li {
+                    transition: transform 0.2s;}
+
+                .expertise-category li:hover {
+                    transform: translateX(5px);
+                color: #3498db;}
+                
+                @media (max-width: 768px) {
+                  .expertise-grid {
+                    grid-template-columns: 1fr;
+                  }
+                  
+                  .expertise-category ul {
+                    columns: 1;
+                  }
+                }
+                </style>
+                <style>
+                    .research-experience {
+                      padding: 2rem;
+                      background: #f8f9fa;
+                      border-radius: 10px;
+                      margin: 2rem 0;
+                    }
+                    
+                    .research-experience h2 {
+                      color: #2c3e50;
+                      border-bottom: 3px solid #3498db;
+                      padding-bottom: 0.5rem;
+                      margin-bottom: 1.5rem;
+                      font-size: 1.8rem;
+                    }
+                    
+                    .research-item {
+                      background: white;
+                      padding: 1rem;
+                      border-radius: 8px;
+                      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                      margin-bottom: .5rem;
+                    }
+                    
+                    .research-title {
+                      color: #2c3e50;
+                      font-size: 1.2rem;
+                      margin-bottom: 0.5rem;
+                    }
+                    
+                    .research-details {
+                      display: flex;
+                      flex-wrap: wrap;
+                      gap: 1rem;
+                      margin-bottom: 1rem;
+                      color: #7f8c8d;
+                      font-size: 0.9rem;
+                    }
+                    
+                    .research-details span {
+                      background: #f1f1f1;
+                      padding: 0.3rem 0.6rem;
+                      border-radius: 4px;
+                    }
+                    
+                    .research-description {
+                      color: #555;
+                      line-height: 1.6;
+                      font-size: 0.95rem;
+                    }
+                    
+                    @media (max-width: 768px) {
+                      .research-details {
+                        flex-direction: column;
+                        gap: 0.5rem;
+                      }
+                    }
+
+.test-scores {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 2px;
+  margin: 2rem 0;
+}
+
+.test-scores h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.score-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.test-name {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.score-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.overall-score {
+  font-weight: bold;
+  color: #3498db;
+  background: #f1f1f1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.sub-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sub-scores span {
+  background: #f1f1f1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .score-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>           
+         
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="profile">
+            <img src="./assets/profile/1681276668008.jpg" alt="Nahid Hasan">
+            <h2>A N M Nahid Hasan</h2>
+            <p>Digital Transformation Expert</p>
+            <h3><a href="./assets/CV/CV A N M NAHID HASAN.pdf" class = "no-underline" target="_blank"><i class="fas fa-regular fa-file"></i> CV Download Here</a> </h3>
+        </div>
+
+        <div class="nav-links">
+            <a href="../index.html#about"><i class="fas fa-user"></i> About</a>
+            <a href="../index.html#re"><i class="fa-solid fa-magnifying-glass"></i>  Research Experience </a>
+            <a href="../index.html#te"><i class="fas fa-briefcase"></i> Experience</a>
+            <a href="../index.html#education"><i class="fas fa-graduation-cap"></i> Education & Test Scores</a>
+            <a href="../index.html#skills"><i class="fas fa-code"></i> Technical Expertise </a>
+            <a href="../index.html#re"><i class="fas fa-project-diagram"></i> Research Experience </a>
+            <a href="../index.html#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+            <a href="../index.html#volunteering"><i class="fa-solid fa-handshake-angle"></i> CO-CURRICULAR ACTIVITIES</a>
+        </div>
+        <div class="social-links">
+            <ul class="social-list">
+                <!-- Email -->
+              <li class="social-item email">
+                <a href="mailto:nahidhasangb@gmail.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Email">
+                   <i class="fa-solid fa-envelope"></i>
+                </a>
+              </li>
+
+              <!-- Facebook -->
+              <li class="social-item facebook">
+                <a href="https://facebook.com/yourprofile" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Facebook profile">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+          
+              <!-- LinkedIn -->
+              <li class="social-item linkedin">
+                <a href="https://www.linkedin.com/in/anmnahidhasan/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn profile">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+          
+              <!-- ResearchGate -->
+              <li class="social-item researchgate">
+                <a href="https://researchgate.net/profile/yourprofile" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="ResearchGate profile">
+                  <i class="fab fa-researchgate"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+
+                    <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Technical Expertise</h2>            
+            <div class="expertise-grid">
+              <!-- AI/ML Column -->
+              <div class="expertise-category ai-ml">
+                <h3>AI/ML & Computer Vision</h3>
+                <ul>
+                  <li>Computer Vision</li>
+                  <li>Deep Learning</li>
+                  <li>TensorFlow</li>
+                  <li>Keras</li>
+                  <li>PyTorch</li>
+                  <li>OpenCV</li>
+                  <li>Explainable AI</li>
+                  <li>Machine Learning</li>
+                  <li>Image Processing</li>
+                </ul>
+              </div>
+          
+              <!-- Development Column -->
+              <div class="expertise-category development">
+                <h3>Development</h3>
+                <ul>
+                  <li>Python</li>
+                  <li>C++</li>
+                  <li>C#</li>
+                  <li>Unity 3D</li>
+                  <li>SQL</li>
+                  <li>R</li>
+                  <li>Java</li>
+                  <li>.NET</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active link highlighting
+        window.addEventListener('scroll', () => {
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('.nav-links a');
+            
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        if(links.getAttribute('href') === `#${id}`) {
+                            links.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

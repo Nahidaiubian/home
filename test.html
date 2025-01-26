@@ -1,0 +1,94 @@
+<section class="test-scores">
+  <h2>Test Scores</h2>
+  
+  <div class="score-card">
+    <div class="score-details">
+      <h3 class="score-details">IELTS</h3>
+      <div class="sub-scores">
+        <span class="overall-score">Overall: 7</span>
+        <span>Listening: 9</span>
+        <span>Reading: 6.5</span>
+        <span>Writing: 6.0</span>
+        <span>Speaking: 6.5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="score-card">
+    <div class="score-details">
+      <h3 class="score-details">GRE</h3>
+      <span class="overall-score">Overall: 310</span>
+      <div class="sub-scores">
+        <span>Quant: 163</span>
+        <span>Verbal: 147</span>
+        <span>AWA: 3.0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.test-scores {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 2px;
+  margin: 2rem 0;
+}
+
+.test-scores h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.score-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.test-name {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.score-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.overall-score {
+  font-weight: bold;
+  color: #3498db;
+  background: #f1f1f1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.sub-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sub-scores span {
+  background: #f1f1f1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .score-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>

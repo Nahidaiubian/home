@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section-wise Synonym Matching Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 650px;
+            text-align: center;
+        }
+
+        .line {
+            margin-bottom: 20px;
+        }
+
+        .word-box {
+            padding: 8px 12px;
+            margin: 5px;
+            background-color: #c8e6c9;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .selected { background-color: #ffcc80; }
+        .incorrect { background-color: #ff8a80 !important; }
+
+        select, button {
+            padding: 8px 16px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        button { background-color: #42a5f5; color: white; border: none; }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Section-wise Synonym Matching Game</h2>
+
+    <div>
+        Select Section:
+        <select id="sectionSelect" onchange="loadSection()"></select>
+    </div>
+
+    <div id="line1" class="line"></div>
+    <hr>
+    <div id="line2" class="line"></div>
+
+    <button onclick="resetGame()">Reset</button>
+    <button onclick="addSection()">Add New Section</button>
+</div>
+
+<script>
+    let sections = {
+        "Section 16-18": [
+            ["expansion", "augmentation"], ["exalt", "valorize"],
+            ["relished", "delighted in"], ["shortcoming", "fault"],
+            ["lull", "respite"], ["gratify", "please"],
+            ["exactitude", "meticulousness"], ["encyclopedic", "exhaustive"],
+            ["unimpeachable", "blameless"], ["unassuming", "modest"],
+            ["quixotic", "idealistic"], ["robust", "strong"]
+        ],
+
+        "Section 19-21": [
+            ["expansion", "augmentation"], ["exalt", "valorize"],
+            ["relished", "delighted in"], ["shortcoming", "fault"],
+            ["lull", "respite"], ["gratify", "please"],
+            ["exactitude", "meticulousness"], ["encyclopedic", "exhaustive"],
+            ["unimpeachable", "blameless"], ["unassuming", "modest"],
+            ["quixotic", "idealistic"], ["robust", "strong"]
+        ]
+        
+    };
+
+    let selections = [], currentPairs = [];
+
+    function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+    }
+
+    function populateSections() {
+        const select = document.getElementById('sectionSelect');
+        select.innerHTML = '';
+        for (let sec in sections) {
+            const option = document.createElement('option');
+            option.value = sec;
+            option.textContent = sec;
+            select.appendChild(option);
+        }
+        loadSection();
+    }
+
+    function loadSection() {
+        const section = document.getElementById('sectionSelect').value;
+        currentPairs = [...sections[section]];
+        resetGame();
+    }
+
+    function createWordBox(container, word) {
+        const div = document.createElement('div');
+        div.className = 'word-box';
+        div.textContent = word;
+        div.onclick = () => selectWord(div, word);
+        container.appendChild(div);
+    }
+
+    function setupGame() {
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+        line1.innerHTML = line2.innerHTML = '';
+
+        const words1 = currentPairs.map(p => p[0]);
+        const words2 = currentPairs.map(p => p[1]);
+        shuffle(words1); shuffle(words2);
+
+        words1.forEach(word => createWordBox(line1, word));
+        words2.forEach(word => createWordBox(line2, word));
+    }
+
+    function selectWord(div, word) {
+        if (selections.length === 2 || div.classList.contains('selected')) return;
+        div.classList.add('selected');
+        selections.push({ div, word });
+
+        if (selections.length === 2) setTimeout(checkMatch, 500);
+    }
+
+    function checkMatch() {
+        const [a, b] = selections;
+        const matched = currentPairs.some(pair =>
+            (pair.includes(a.word) && pair.includes(b.word)));
+
+        if (matched) {
+            [a.div, b.div].forEach(d => {
+                d.style.transform = 'scale(0)';
+                d.style.opacity = '0';
+                setTimeout(() => d.remove(), 300);
+            });
+        } else {
+            [a.div, b.div].forEach(d => d.classList.add('incorrect'));
+            setTimeout(() => [a.div, b.div].forEach(d => d.classList.remove('incorrect', 'selected')), 700);
+        }
+
+        selections = [];
+    }
+
+    function resetGame() {
+        selections = [];
+        setupGame();
+    }
+
+    function addSection() {
+        const secName = prompt("Enter new section name:");
+        if (!secName) return;
+
+        const wordCount = parseInt(prompt("How many pairs in this section?"));
+        if (!wordCount || wordCount <= 0) return;
+
+        const newPairs = [];
+        for (let i = 0; i < wordCount; i++) {
+            const word1 = prompt(`Enter word 1 for pair ${i + 1}:`);
+            const word2 = prompt(`Enter word 2 for pair ${i + 1}:`);
+            if (word1 && word2) newPairs.push([word1.trim(), word2.trim()]);
+        }
+
+        sections[secName] = newPairs;
+        populateSections();
+        alert("New section added successfully!");
+    }
+
+    populateSections();
+</script>
+</body>
+</html>

@@ -494,9 +494,109 @@
     align-items: flex-start;
   }
 }
+.certification-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.certification-card li {
+    margin-bottom: 10px;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: #111;
+}
+
+.no-underline:hover {
+    text-decoration: underline;
+}
+
+#certificate-preview {
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 260px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+}
+
+#certificate-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 </style>           
-         
+      
 </head>
+<style>
+  .certification-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.certification-card li {
+    margin-bottom: 10px;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: #111;
+}
+
+.no-underline:hover {
+    text-decoration: underline;
+}
+
+#certificate-preview {
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 260px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+}
+
+#certificate-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const previewBox = document.getElementById("certificate-preview");
+      const iframe = previewBox.querySelector("iframe");
+  
+      document.querySelectorAll(".certification-card a").forEach(link => {
+          link.addEventListener("mouseenter", () => {
+              const href = link.getAttribute("href");
+  
+              if (href.endsWith(".png") || href.endsWith(".jpg") || href.endsWith(".jpeg") || href.endsWith(".pdf")) {
+                  iframe.src = href;
+                  previewBox.style.display = "block";
+              }
+          });
+  
+          link.addEventListener("mouseleave", () => {
+              previewBox.style.display = "none";
+              iframe.src = "";
+          });
+      });
+  });
+  </script>
+  
 <body>
     <!-- Sidebar Navigation -->
     <nav class="sidebar">
@@ -964,27 +1064,126 @@
 
         <!-- Certifications Section -->
         <section id="certifications">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certification-grid">
-                <div class="research-item">
-                <div class="certification-card">
-                    <li><a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">CCNA Routing and Switching Certified. Cisco ID: CSCO13545734</a></li>
-                    <li><a href="https://www.udemy.com/certificate/UC-54a1cf34-1f3e-4b50-8ffc-46003ef76068/" target="_blank" class = "no-underline" rel="noopener noreferrer" >Python for Computer Vision with OpenCV and Deep Learning </a></li>
-                    <li><a href="./assets/certificate/cert5.png" target="_blank" class = "no-underline" rel="noopener noreferrer">PMP Exam Preparation Course </a></li>
-                    <li><a href="./assets/certificate/cert5.png" target="_blank" class = "no-underline" rel="noopener noreferrer">Prepare for the ISC2 Information Systems Security Professional (CISSP)</a></li>
-                    <li><a href="./assets/certificate/cert5.png" target="_blank" class = "no-underline" rel="noopener noreferrer">Python Data Analysis (2020)</a>	</li>
-                    <li><a href="./assets/certificate/cert5.png" target="_blank" class = "no-underline" rel="noopener noreferrer">Develop Your AI Skills as a Cybersecurity Professional - LinkedIn Learning. 	</a></li>
-                    <li><a href="./assets/certificate/cert5.png" target="_blank" class = "no-underline" rel="noopener noreferrer">AWS Certified Solutions Architect-Associate </a>	</li>
-                    <li><a href="./assets/certificate/cert5.png" class = "no-underline" rel="noopener noreferrer"> Python Programming Bible | Networking, GUI, Email, XML, CGI </a> </li>
-                    <li><a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">Data Analysis with Pandas and Python - Udemy </a>	</li>
-                    <li><a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">MATLAB/SIMULINK Bible | Go from Zero to Hero </a>	</li>
-                    <li><a href="./assets/certificate/CertificateOfCompletion_Power BI Data Modeling with DAX.pdf" target="_blank" class = "no-underline" rel="noopener noreferrer">Power BI Data Modeling with DAX</a>	</li>
-                    <li><a href="./assets/certificate/CertificateOfCompletion_Learning SQL Programming 2017.pdf" target="_blank" class = "no-underline" rel="noopener noreferrer">Learning SQL Programming (2017)</a>	</li>
-                </div>
-            </div>
-                <!-- Add other certifications -->
-            </div>
-        </section>
+          <h2 class="section-title">Certifications</h2>
+      
+          <div class="certification-card">
+              <ul>
+                  <li>
+                      <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          CCNA Routing and Switching Certified. Cisco ID: CSCO13545734
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="https://www.udemy.com/certificate/UC-54a1cf34-1f3e-4b50-8ffc-46003ef76068/"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Python for Computer Vision with OpenCV and Deep Learning
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/cert5.png"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          PMP Exam Preparation Course
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/cert5.png"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Prepare for the ISC2 Information Systems Security Professional (CISSP)
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/cert5.png"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Python Data Analysis (2020)
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/cert5.png"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Develop Your AI Skills as a Cybersecurity Professional – LinkedIn Learning
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/cert5.png"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          AWS Certified Solutions Architect – Associate
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/cert5.png"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Python Programming Bible | Networking, GUI, Email, XML, CGI
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Data Analysis with Pandas and Python – Udemy
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          MATLAB / SIMULINK Bible | Go from Zero to Hero
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/CertificateOfCompletion_Power BI Data Modeling with DAX.pdf"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Power BI Data Modeling with DAX
+                      </a>
+                  </li>
+      
+                  <li>
+                      <a href="./assets/certificate/CertificateOfCompletion_Learning SQL Programming 2017.pdf"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="no-underline">
+                          Learning SQL Programming (2017)
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      
+          <!-- Hover preview container -->
+          <div id="certificate-preview">
+              <iframe src="" title="Certificate Preview"></iframe>
+          </div>
+      </section>
+      
         <!-- CO-CURRICULAR ACTIVITIES -->
         <section id="volunteering">
             <h2 class="section-title">CO-CURRICULAR ACTIVITIES</h2>

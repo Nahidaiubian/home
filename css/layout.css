@@ -1,0 +1,45 @@
+.sidebar {
+    width: 300px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--primary-color);
+    padding: 1rem;
+    color: white;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-color);
+}
+
+.nav-links a {
+    display: block;
+    color: white;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.main-content {
+    margin-left: 300px;
+    padding: 3rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 770px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 2rem 1rem;
+    }
+}

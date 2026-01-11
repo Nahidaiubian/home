@@ -1,1256 +1,639 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A N M Nahid Hasan - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #27ae60;
-            --text-color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A N M Nahid Hasan - Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-            .no-underline {
-              text-decoration: none; /* Removes the underline */
-              color: inherit; /* Inherits the text color from the parent */
-            }
-            .no-underline:hover {
-              text-decoration: underline; /* Adds underline on hover */
-        }
-
-        /* Navigation */
-        .sidebar {
-            width: 300px;
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            background: var(--primary-color);
-            padding: 1rem;
-            color: white;
-        }
-
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            border: 3px solid var(--secondary-color);
-        }
-
-        .nav-links {
-            margin-top: .5rem;
-        }
-
-        .nav-links a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-            padding-left: 1rem;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 300px;
-            padding: 3rem;
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary-color);
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: var(--secondary-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-left: 2rem;
-        }
-        .icon {
-          width: 24px; /* Adjust size as needed */
-          height: 24px; /* Adjust size as needed */
-          object-fit: contain; /* Ensures the image fits properly */
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            background: var(--accent-color);
-            border-radius: 50%;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Project Cards */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 770px) {
-            .sidebar {
-                width: 100%;
-                position: static;
-                padding: 2rem 1rem;
-            }
-            
-            .main-content {
-                margin-left: 0;
-                padding: 2rem 1rem;
-            }
-        }
-    </style>
-    <style>
-        .social-links {
-          text-align: right;
-          border-radius: 10px;
-          max-width: 150px;
-          margin: 20px auto;
-        }
-        
-        .social-list {
-          list-style: none;
-          padding: 0;
-          margin: 15px 0 0;
-          display: flex;
-          justify-content: center;
-          gap: 15px;
-        }
-        
-        .social-item a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: #fff;
-          color: white;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .social-item a:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        
-        /* Individual platform colors */
-        .email a { background: #46471b; }
-        .facebook a { background: #3b5998; }
-        .linkedin a { background: #0077b5; }
-        .researchgate a { background: #00ccbb; }
-        
-        /* Hover effects */
-        .facebook a:hover { background: #2d4373; }
-        .linkedin a:hover { background: #005582; }
-        .researchgate a:hover { background: #00b3a4; }
-        
-        .social-links h3 {
-          margin: 0 0 15px;
-          color: #333;
-          font-size: 1.2em;
-        }
-        </style>
-         <style>
-            .research-interests {
-              padding: 2rem;
-              background: #f8f9fa;
-              border-radius: 12px;
-              margin: 2rem 0;
-              text-align: justify;
-              text-justify: inter-word;
-            }
-            
-            .research-interests h2 {
-              color: #2c3e50;
-              border-bottom: 3px solid #3498db;
-              padding-bottom: 0.5rem;
-              margin-bottom: 1.5rem;
-              font-size: 1.8rem;
-            }
-            
-            .interest-grid {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-              gap: 1rem;
-              list-style: none;
-              padding: 0;
-            }
-            
-            .interest-item {
-              padding: 1.2rem;
-              border-radius: 8px;
-              background: white;
-              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-              transition: transform 0.2s ease;
-              position: relative;
-              font-weight: 500;
-            }
-            
-            .interest-item:hover {
-              transform: translateY(-3px);
-            }
-            
-            .subpoint {
-              display: block;
-              font-size: 0.9em;
-              color: #7f8c8d;
-              margin-top: 0.5rem;
-            }
-            
-            /* Category-based color coding */
-            .technical { border-left: 4px solid #3498db; }
-            .security { border-left: 4px solid #e74c3c; }
-            .analysis { border-left: 4px solid #2ecc71; }
-            .data { border-left: 4px solid #f1c40f; }
-            .management { border-left: 4px solid #9b59b6; }
-            
-            @media (max-width: 768px) {
-              .interest-grid {
-                grid-template-columns: 1fr;
-              }
-            }
-            </style>
-            <style>
-                .expertise-section {
-                  padding: 2rem;
-                  background: #f8f9fa;
-                }
-                
-                .expertise-section h2 {
-                  color: #2c3e50;
-                  border-bottom: 3px solid #3498db;
-                  padding-bottom: 0.5rem;
-                  margin-bottom: 2rem;
-                  font-size: 2rem;
-                }
-                
-                .expertise-grid {
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                  gap: 1.5rem;
-                }
-                
-                .expertise-category {
-                  background: white;
-                  padding: 1.5rem;
-                  border-radius: 10px;
-                  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                }
-                
-                .expertise-category h3 {
-                  color: white;
-                  padding: 0.5rem 1rem;
-                  border-radius: 5px;
-                  margin: -1.5rem -1.5rem 1.5rem;
-                }
-                
-                .ai-ml h3 { background: #b0ed4d; }
-                .development h3 { background: #3498db; }
-                .data-science h3 { background: #2ecc71; }
-                .engineering h3 { background: #9b59b6; }
-                .nlp h3 { background: #f1c40f; }
-                .tools h3 { background: #0ff1c4; }
-                
-                .expertise-category ul {
-                  list-style: none;
-                  padding: 0;
-                  margin: 0;
-                  columns: 2;
-                  column-gap: 1rem;
-                }
-                
-                .expertise-category li {
-                  padding: 0.3rem 0;
-                  break-inside: avoid;
-                  font-size: 0.95rem;
-                }
-
-                .expertise-category li {
-                    transition: transform 0.2s;}
-
-                .expertise-category li:hover {
-                    transform: translateX(5px);
-                color: #3498db;}
-                
-                @media (max-width: 768px) {
-                  .expertise-grid {
-                    grid-template-columns: 1fr;
-                  }
-                  
-                  .expertise-category ul {
-                    columns: 1;
-                  }
-                }
-                </style>
-                <style>
-                    .research-experience {
-                      padding: 2rem;
-                      background: #f8f9fa;
-                      border-radius: 10px;
-                      margin: 2rem 0;
-                    }
-                    
-                    .research-experience h2 {
-                      color: #2c3e50;
-                      border-bottom: 3px solid #3498db;
-                      padding-bottom: 0.5rem;
-                      margin-bottom: 1.5rem;
-                      font-size: 1.8rem;
-                    }
-                    
-                    .research-item {
-                      background: white;
-                      padding: 1rem;
-                      border-radius: 8px;
-                      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                      margin-bottom: .5rem;
-                        text-align: justify;
-              text-justify: inter-word;
-                    }
-                    
-                    .research-title {
-                      color: #2c3e50;
-                      font-size: 1.2rem;
-                      margin-bottom: 0.5rem;
-                    }
-                    
-                    .research-details {
-                      display: flex;
-                      flex-wrap: wrap;
-                      gap: 1rem;
-                      margin-bottom: 1rem;
-                      color: #7f8c8d;
-                      font-size: 0.9rem;
-                    }
-                    
-                    .research-details span {
-                      background: #f1f1f1;
-                      padding: 0.3rem 0.6rem;
-                      border-radius: 4px;
-                    }
-                    
-                    .research-description {
-                      color: #555;
-                      line-height: 1.6;
-                      font-size: 0.95rem;
-                    }
-                    
-                    @media (max-width: 768px) {
-                      .research-details {
-                        flex-direction: column;
-                        gap: 0.5rem;
-                      }
-                    }
-
-.test-scores {
-  padding: 2rem;
-  background: #f8f9fa;
-  border-radius: 2px;
-  margin: 2rem 0;
-}
-
-.test-scores h2 {
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-
-.score-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
-}
-
-.test-name {
-  color: #2c3e50;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.score-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-}
-
-.overall-score {
-  font-weight: bold;
-  color: #3498db;
-  background: #f1f1f1;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-}
-
-.sub-scores {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.sub-scores span {
-  background: #f1f1f1;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  color: #7f8c8d;
-}
-
-@media (max-width: 768px) {
-  .score-details {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-.certification-card ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.certification-card li {
-    margin-bottom: 10px;
-}
-
-.no-underline {
-    text-decoration: none;
-    color: #111;
-}
-
-.no-underline:hover {
-    text-decoration: underline;
-}
-
-#certificate-preview {
-    position: fixed;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
-    width: 380px;
-    height: 260px;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    display: none;
-    z-index: 1000;
-}
-
-#certificate-preview iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-</style>           
-      
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
 </head>
-<style>
-  .certification-card ul {
-    list-style: none;
-    padding-left: 0;
-}
 
-.certification-card li {
-    margin-bottom: 10px;
-}
-
-.no-underline {
-    text-decoration: none;
-    color: #111;
-}
-
-.no-underline:hover {
-    text-decoration: underline;
-}
-
-#certificate-preview {
-    position: fixed;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
-    width: 380px;
-    height: 260px;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    display: none;
-    z-index: 1000;
-}
-
-#certificate-preview iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-</style>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-      const previewBox = document.getElementById("certificate-preview");
-      const iframe = previewBox.querySelector("iframe");
-  
-      document.querySelectorAll(".certification-card a").forEach(link => {
-          link.addEventListener("mouseenter", () => {
-              const href = link.getAttribute("href");
-  
-              if (href.endsWith(".png") || href.endsWith(".jpg") || href.endsWith(".jpeg") || href.endsWith(".pdf")) {
-                  iframe.src = href;
-                  previewBox.style.display = "block";
-              }
-          });
-  
-          link.addEventListener("mouseleave", () => {
-              previewBox.style.display = "none";
-              iframe.src = "";
-          });
-      });
-  });
-  </script>
-  
 <body>
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar">
-        <div class="profile">
-            <img src="./assets/profile/1681276668008.jpg" alt="Nahid Hasan">
-            <h2>A N M Nahid Hasan</h2>
-            <p>Digital Transformation Expert</p>
-            <h3><a href="./assets/CV/CV A N M NAHID HASAN.pdf" class = "no-underline" target="_blank"><i class="fas fa-regular fa-file"></i> CV Download Here</a> </h3>
-        </div>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+      <div class="profile">
+          <img src="./assets/profile/1681276668008.jpg" alt="Nahid Hasan">
+          <h2>A N M Nahid Hasan</h2>
+          <p>Digital Transformation Expert</p>
+          <h3><a href="./assets/CV/CV A N M NAHID HASAN.pdf" class = "no-underline" target="_blank"><i class="fas fa-regular fa-file"></i> CV Download Here</a> </h3>
+      </div>
 
-        <div class="nav-links">
-            <a href="#about"><i class="fas fa-user"></i> About</a>
-            <a href="#re"><i class="fa-solid fa-magnifying-glass"></i>  Research Experience </a>
-            <a href="#te"><i class="fas fa-briefcase"></i> Experience</a>
-            <a href="#education"><i class="fas fa-graduation-cap"></i> Education & Test Scores</a>
-            <a href="#skills"><i class="fas fa-code"></i> Technical Expertise </a>
-         <!--   <a href="#re"><i class="fas fa-project-diagram"></i> Research Experience </a> -->
-            <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
-            <a href="#volunteering"><i class="fa-solid fa-handshake-angle"></i> CO-CURRICULAR ACTIVITIES</a>
-        </div>
-        <div class="social-links">
-            <ul class="social-list">
-                <!-- Email -->
-              <li class="social-item email">
-                <a href="mailto:nahidhasangb@gmail.com" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Email">
-                   <i class="fa-solid fa-envelope"></i>
-                </a>
-              </li>
+      <div class="nav-links">
+          <a href="#about"><i class="fas fa-user"></i> About</a>
+          <a href="#re"><i class="fa-solid fa-magnifying-glass"></i>  Research Experience </a>
+          <a href="#te"><i class="fas fa-briefcase"></i> Experience</a>
+          <a href="#education"><i class="fas fa-graduation-cap"></i> Education & Test Scores</a>
+          <a href="#skills"><i class="fas fa-code"></i> Technical Expertise </a>
+       <!--   <a href="#re"><i class="fas fa-project-diagram"></i> Research Experience </a> -->
+          <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+          <a href="#volunteering"><i class="fa-solid fa-handshake-angle"></i> CO-CURRICULAR ACTIVITIES</a>
+      </div>
+      <div class="social-links">
+          <ul class="social-list">
+              <!-- Email -->
+            <li class="social-item email">
+              <a href="mailto:nahidhasangb@gmail.com" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="Email">
+                 <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
 
-              <!-- Facebook -->
-              <li class="social-item facebook">
-                <a href="https://facebook.com/yourprofile" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Facebook profile">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-          
-              <!-- LinkedIn -->
-              <li class="social-item linkedin">
-                <a href="https://www.linkedin.com/in/anmnahidhasan/" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="LinkedIn profile">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-          
-              <!-- ResearchGate -->
-              <li class="social-item researchgate">
-                <a href="https://researchgate.net/profile/yourprofile" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="ResearchGate profile">
-                  <i class="fab fa-researchgate"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-    </nav>
-
-    
-    <!-- Main Content -->
-    <div class="main-content"
-
-        <!-- About Section -->
-        <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="research-item">
-            <p>
-              I am A. N. M. Nahid Hasan, a prospective PhD student with research interests in Artificial Intelligence, Deep Learning, Machine Learning, Natural Language Processing, Large Language Models, and the Internet of Things. I am currently pursuing a Master of Science in Electrical and Computer Engineering at Grand Valley State University.
-              <br>
-              I completed my Bachelor’s degree in Electrical and Electronic Engineering from the American International University–Bangladesh. Since then, I have gained over eight years of professional experience in energy management, project leadership, and technology integration, which has shaped my ability to bridge theoretical research with real-world applications. 
-              <br>
-              My academic and research interests focus on Edge AI, Jetson-based embedded systems, cloud computing, hardware software co-design using Verilog, VHDL, and the development and deployment of large language models. I am highly motivated to leverage my industry experience and graduate training to contribute to impactful, interdisciplinary research at the doctoral level. 
-            </p>
-        </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title">Research Interests</h2>
-            <ul class="interest-grid">
-                <li class="interest-item technical" > <i class="fas fa-eye"></i> Computer Vision</li>
-                <li class="interest-item security"> <i class="fas fa-brain"></i> Machine Learning & Deep Learning</li>
-                <li class="interest-item analysis"><i class="fas fa-code"></i> Cyber Security & Information Security</li>
-                <li class="interest-item data"> <img src="./assets/icon/data-mining.png" alt="Machine Learning Icon" class="icon">  Edge AI, Jetson-based embedded systems, cloud computing</li>
-                <li class="interest-item technical"><img src="./assets/icon/cloud-database.png" alt="Machine Learning Icon" class="icon">  Network Infrastructure</li>
-                <li class="interest-item security"><img src="./assets/icon/nlp.png" alt="Machine Learning Icon" class="icon">  Natural Language Processing & LLM</li>
-                <li class="interest-item security"><img src="./assets/icon/cyber-physical-system.png" alt="Machine Learning Icon" class="icon">  Cyber Physical System & IoT</li>
-              </ul>
-        </section>
-                <!-- Research Experience Section -->
-    <section id="re">
-        <h2 class="section-title"><img src="./assets/icon/analytics.png" alt="Machine Learning Icon" class="icon"> Research Experience</h2>
-  
-        <div class="research-item">
-                <h3 class="research-title">Signal Analysis and Pattern Recognition of Cardio-vascular Arrhythmia from ECG using Artificial Neural Network</h3>
-                <div class="research-details">
-                    <span class="research-type">Undergraduate Research Work</span>
-                    <span class="research-year">Year: 2016</span>
-                    <span class="supervisor">Supervisor: A S M Bakibillah</span>
-                    <span class="supervisor"> <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
-                </div>
-            <div class="research-description">
-                <p> 
-                Conducted in-depth analysis of ECG signals to identify patterns associated with cardiovascular arrhythmia. 
-                Developed and implemented an Artificial Neural Network (ANN) model for accurate classification and prediction 
-                of arrhythmia types. The research involved data preprocessing, feature extraction, and model optimization.
-                </p>
-            </div>
-        </div>
-    </section>
-                    <!-- Project Experience Section -->
-    <section id="re">
-        <h2 class="section-title">Project Experience</h2>
-  
-        <div class="research-item">
-                <h3 class="research-title">Worked as Team Lead in Paperless Banking Activities of Jamuna Bank</h3>
-                <div class="research-details">
-                   
-                    <span class="supervisor"> <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
-                    
-                </div>
-        </div>
-        <div class="research-item">
-            <h3 class="research-title"> Implementation of an AI-based attendance system and HRIS system across more than 170 branches, serving over 5,000 employees to streamline attendance management. </h3>
-            <div class="research-details">
-                <span class="supervisor"> <a href="./pages/Experinece.html" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
-            </div>
-           
-    </div>
-    <div class="research-item" >
-        <h3 class="research-title"> Implementation of Jamuna Bank's new website. </h3>
-        <div class="research-details">
+            <!-- Facebook -->
+            <li class="social-item facebook">
+              <a href="https://facebook.com/yourprofile" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="Facebook profile">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
         
-            <span class="supervisor"> <a href="https://jamunabankbd.com/" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
+            <!-- LinkedIn -->
+            <li class="social-item linkedin">
+              <a href="https://www.linkedin.com/in/anmnahidhasan/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+        
+            <!-- ResearchGate -->
+            <li class="social-item researchgate">
+              <a href="https://researchgate.net/profile/yourprofile" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="ResearchGate profile">
+                <i class="fab fa-researchgate"></i>
+              </a>
+            </li>
+          </ul>
         </div>
+  </nav>
+
+  
+  <!-- Main Content -->
+  <div class="main-content"
+
+      <!-- About Section -->
+      <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="research-item">
+          <p>
+            I am A. N. M. Nahid Hasan, a prospective PhD student with research interests in Artificial Intelligence, Deep Learning, Machine Learning, Natural Language Processing, Large Language Models, and the Internet of Things. I am currently pursuing a Master of Science in Electrical and Computer Engineering at Grand Valley State University.
+            <br>
+            I completed my Bachelor’s degree in Electrical and Electronic Engineering from the American International University–Bangladesh. Since then, I have gained over eight years of professional experience in energy management, project leadership, and technology integration, which has shaped my ability to bridge theoretical research with real-world applications. 
+            <br>
+            My academic and research interests focus on Edge AI, Jetson-based embedded systems, cloud computing, hardware software co-design using Verilog, VHDL, and the development and deployment of large language models. I am highly motivated to leverage my industry experience and graduate training to contribute to impactful, interdisciplinary research at the doctoral level. 
+          </p>
+      </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+          <h2 class="section-title">Research Interests</h2>
+          <ul class="interest-grid">
+              <li class="interest-item technical" > <i class="fas fa-eye"></i> Computer Vision</li>
+              <li class="interest-item security"> <i class="fas fa-brain"></i> Machine Learning & Deep Learning</li>
+              <li class="interest-item analysis"><i class="fas fa-code"></i> Cyber Security & Information Security</li>
+              <li class="interest-item data"> <img src="./assets/icon/data-mining.png" alt="Machine Learning Icon" class="icon">  Edge AI, Jetson-based embedded systems, cloud computing</li>
+              <li class="interest-item technical"><img src="./assets/icon/cloud-database.png" alt="Machine Learning Icon" class="icon">  Network Infrastructure</li>
+              <li class="interest-item security"><img src="./assets/icon/nlp.png" alt="Machine Learning Icon" class="icon">  Natural Language Processing & LLM</li>
+              <li class="interest-item security"><img src="./assets/icon/cyber-physical-system.png" alt="Machine Learning Icon" class="icon">  Cyber Physical System & IoT</li>
+            </ul>
+      </section>
+              <!-- Research Experience Section -->
+  <section id="re">
+      <h2 class="section-title"><img src="./assets/icon/analytics.png" alt="Machine Learning Icon" class="icon"> Research Experience</h2>
+
+      <div class="research-item">
+              <h3 class="research-title">Signal Analysis and Pattern Recognition of Cardio-vascular Arrhythmia from ECG using Artificial Neural Network</h3>
+              <div class="research-details">
+                  <span class="research-type">Undergraduate Research Work</span>
+                  <span class="research-year">Year: 2016</span>
+                  <span class="supervisor">Supervisor: A S M Bakibillah</span>
+                  <span class="supervisor"> <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
+              </div>
+          <div class="research-description">
+              <p> 
+              Conducted in-depth analysis of ECG signals to identify patterns associated with cardiovascular arrhythmia. 
+              Developed and implemented an Artificial Neural Network (ANN) model for accurate classification and prediction 
+              of arrhythmia types. The research involved data preprocessing, feature extraction, and model optimization.
+              </p>
+          </div>
+      </div>
+  </section>
+                  <!-- Project Experience Section -->
+  <section id="re">
+      <h2 class="section-title">Project Experience</h2>
+
+      <div class="research-item">
+              <h3 class="research-title">Worked as Team Lead in Paperless Banking Activities of Jamuna Bank</h3>
+              <div class="research-details">
+                 
+                  <span class="supervisor"> <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
+                  
+              </div>
+      </div>
+      <div class="research-item">
+          <h3 class="research-title"> Implementation of an AI-based attendance system and HRIS system across more than 170 branches, serving over 5,000 employees to streamline attendance management. </h3>
+          <div class="research-details">
+              <span class="supervisor"> <a href="./pages/Experinece.html" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
+          </div>
+         
+  </div>
+  <div class="research-item" >
+      <h3 class="research-title"> Implementation of Jamuna Bank's new website. </h3>
+      <div class="research-details">
+      
+          <span class="supervisor"> <a href="https://jamunabankbd.com/" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
+      </div>
 </div>
-    <div class="research-item">
-        <h3 class="research-title">Implemention new MFS (Shadhin) and Core Banking software with data migration, UAT and security.</h3>
-        <div class="research-details">
-          
-            <span class="supervisor"> <a href="https://shadhin.jamunabankbd.com" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
-        </div>
+  <div class="research-item">
+      <h3 class="research-title">Implemention new MFS (Shadhin) and Core Banking software with data migration, UAT and security.</h3>
+      <div class="research-details">
+        
+          <span class="supervisor"> <a href="https://shadhin.jamunabankbd.com" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
+      </div>
 </div>
 <div class="research-item">
-    <h3 class="research-title">Lead the team to get LEED’s Platinum Certification in Unifill Group</h3>
-    <div class="research-details">
-      
-        <span class="supervisor"> <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
-    </div>
+  <h3 class="research-title">Lead the team to get LEED’s Platinum Certification in Unifill Group</h3>
+  <div class="research-details">
+    
+      <span class="supervisor"> <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class = "no-underline" rel="noopener noreferrer">  <Strong> Click Here </Strong></a> </span>
+  </div>
 </div>
-    </section>
-                    <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title">Technical Expertise</h2>            
-            <div class="expertise-grid">
-              <!-- AI/ML Column -->
-              <div class="expertise-category ai-ml">
-                <h3>AI/ML & Computer Vision</h3>
-                <ul>
-                  <li>Computer Vision</li>
-                  <li>Deep Learning</li>
-                  <li>TensorFlow</li>
-                  <li>Keras</li>
-                  <li>PyTorch</li>
-                  <li>OpenCV</li>
-                  <li>Explainable AI</li>
-                  <li>Machine Learning</li>
-                  <li>Image Processing</li>
-                </ul>
-              </div>
-          
-              <!-- Development Column -->
-              <div class="expertise-category development">
-                <h3>Development</h3>
-                <ul>
-                  <li>Python</li>
-                  <li>C++</li>
-                  <li>C#</li>
-                  <li>Unity 3D</li>
-                  <li>SQL</li>
-                  <li>R</li>
-                  <li>Java</li>
-                  <li>.NET</li>
-                </ul>
-              </div>
-          
-              <!-- Data Science Column -->
-              <div class="expertise-category data-science">
-                <h3>Data Science</h3>
-                <ul>
-                  <li>NumPy</li>
-                  <li>Pandas</li>
-                  <li>SciPy</li>
-                  <li>Tableau</li>
-                  <li>Power BI</li>
-                  <li>SPSS</li>
-                  <li>Excel (VBA)</li>
-                  <li>MATLAB</li>
-                </ul>
-              </div>
-          
-              <!-- Engineering & Security -->
-              <div class="expertise-category engineering">
-                <h3>Engineering & Security</h3>
-                <ul>
-                  <li>MATLAB</li>
-                  <li>AutoCAD</li>
-                  <li>ETABS</li>
-                  <li>LabVIEW</li>
-                  <li>Qiskit</li>
-                  <li>CCNA</li>
-                  <li>Kali Linux</li>
-                  <li>Wireshark</li>
-                  <li>Nmap</li>
-                </ul>
-              </div>
-          
-              <!-- NLP & Tools -->
-              <div class="expertise-category nlp">
-                <h3>NLP & LLM</h3>
-                <ul>
-                  <li>SpaCy</li>
-                  <li>NLTK</li>
-                  <li>Transformers</li>
-                  <li>BERT</li>
-                  <li>GPT</li>
-                  <li>Hugging Face</li>
-                  <li>Anaconda</li>
-                </ul>
-              </div>
-                 <!-- NLP & Tools -->
-              <div class="expertise-category tools">
-                <h3>Other Softwares & Tools</h3>
-                <ul>
-                  <li>SpaCy</li>
-                  <li>NLTK</li>
-                  <li>Transformers</li>
-                  <li>BERT</li>
-                  <li>GPT</li>
-                  <li>Visual Studio</li>
-                  <li>Anaconda</li>
-                  <li>Eclipse</li>
-                  <li>Adobe Creative Suite</li>
-                </ul>
-              </div>
+  </section>
+                  <!-- Skills Section -->
+      <section id="skills">
+          <h2 class="section-title">Technical Expertise</h2>            
+          <div class="expertise-grid">
+            <!-- AI/ML Column -->
+            <div class="expertise-category ai-ml">
+              <h3>AI/ML & Computer Vision</h3>
+              <ul>
+                <li>Computer Vision</li>
+                <li>Deep Learning</li>
+                <li>TensorFlow</li>
+                <li>Keras</li>
+                <li>PyTorch</li>
+                <li>OpenCV</li>
+                <li>Explainable AI</li>
+                <li>Machine Learning</li>
+                <li>Image Processing</li>
+              </ul>
             </div>
-          </section>
-
-        <!-- Teaching Experience -->
-        <section id="te">
-            <h2 class="section-title">Teaching Experience</h2>
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Graduate Assistant</h3>
-    <h4>Grand Valley State University | Full-time</h4>
-    <p>Aug 2025 – Present · Grand Rapids, Michigan, United States</p>
-    <ul>
-        <li>Supported embedded systems, FPGA, and control engineering laboratories through hardware setup, debugging, and direct technical assistance to students.</li>
-        <li>Developed Verilog modules, testbenches, and simulations using Vivado and ModelSim for digital logic and communication interface experiments.</li>
-        <li>Programmed embedded firmware in C/C++ and Python for microcontrollers and SoC platforms, integrating sensors, actuators, and real-time peripherals.</li>
-        <li>Configured, tested, and validated UART, SPI, I²C, and CAN communication protocols for instructional and research-oriented experiments.</li>
-        <li>Performed hardware bring-up, oscilloscope-based measurements, logic-analyzer testing, and systematic troubleshooting of FPGA and embedded systems.</li>
-        <li>Maintained and calibrated laboratory hardware, including Basys-3 FPGA boards, MSP432 and STM32 microcontrollers, Arduino platforms, and Jetson Nano systems for edge AI applications.</li>
-        <li>Operated CNC routers, lathe machines, milling machines, and metal and woodworking tools to support student projects and prototype fabrication.</li>
-        <li>Assisted with laser-cutting operations, 3D printing workflows, and CAD-to-manufacturing processes using AutoCAD and SolidWorks.</li>
-        <li>Prepared, updated, and standardized technical lab manuals, schematics, wiring diagrams, and instructional documentation.</li>
-        <li>Supported faculty research activities in control modeling, signal processing, embedded artificial intelligence, and hardware–software co-design.</li>
-     </ul>
+        
+            <!-- Development Column -->
+            <div class="expertise-category development">
+              <h3>Development</h3>
+              <ul>
+                <li>Python</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>Unity 3D</li>
+                <li>SQL</li>
+                <li>R</li>
+                <li>Java</li>
+                <li>.NET</li>
+              </ul>
+            </div>
+        
+            <!-- Data Science Column -->
+            <div class="expertise-category data-science">
+              <h3>Data Science</h3>
+              <ul>
+                <li>NumPy</li>
+                <li>Pandas</li>
+                <li>SciPy</li>
+                <li>Tableau</li>
+                <li>Power BI</li>
+                <li>SPSS</li>
+                <li>Excel (VBA)</li>
+                <li>MATLAB</li>
+              </ul>
+            </div>
+        
+            <!-- Engineering & Security -->
+            <div class="expertise-category engineering">
+              <h3>Engineering & Security</h3>
+              <ul>
+                <li>MATLAB</li>
+                <li>AutoCAD</li>
+                <li>ETABS</li>
+                <li>LabVIEW</li>
+                <li>Qiskit</li>
+                <li>CCNA</li>
+                <li>Kali Linux</li>
+                <li>Wireshark</li>
+                <li>Nmap</li>
+              </ul>
+            </div>
+        
+            <!-- NLP & Tools -->
+            <div class="expertise-category nlp">
+              <h3>NLP & LLM</h3>
+              <ul>
+                <li>SpaCy</li>
+                <li>NLTK</li>
+                <li>Transformers</li>
+                <li>BERT</li>
+                <li>GPT</li>
+                <li>Hugging Face</li>
+                <li>Anaconda</li>
+              </ul>
+            </div>
+               <!-- NLP & Tools -->
+            <div class="expertise-category tools">
+              <h3>Other Softwares & Tools</h3>
+              <ul>
+                <li>SpaCy</li>
+                <li>NLTK</li>
+                <li>Transformers</li>
+                <li>BERT</li>
+                <li>GPT</li>
+                <li>Visual Studio</li>
+                <li>Anaconda</li>
+                <li>Eclipse</li>
+                <li>Adobe Creative Suite</li>
+              </ul>
             </div>
           </div>
-            </div>
-
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Teaching Assistant (TA)</h3>
-                    <h4>American International University-Bangladesh | 2014-2015</h4>
-                    <ul>
-                        <li>Subjects: Digital Logic Design, Analog Electronics</li>
-                        <li>Assisted with quizzes, exams, and grading.</li>
-                        <li>Conducted lab sessions and supported faculty.</li>
-                    </ul>
-                </div>
-            </div>
-            </div>
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>School and Coaching Experience</h3>
-                    <h4>Evergreen International School | 2013-2017</h4>
-                    <ul>
-                    <li><strong>Subjects:</strong> Mathematics, Physics, ICT, and Computer Science (10th–12th grades)</li>
-                    </ul>
-                    <h4>University Admission Coaching | 2013-2017</h4>
-                    <ul>
-                    <li><strong>Subjects:</strong> Mathematics and Physics for university entrance exam preparation</li>
-                    </ul>
-                </div>
-            </div>
-            </div>
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Trainer for SPSB (Society for the Popularization of Science, Bangladesh)</h3>
-                    <ul>
-                    <li><strong>Focus:</strong> Mathematics, Science, and Technology training for school students</li>
-                    <li><strong>Responsibilities:</strong>
-                        <ul>
-                        <li>Prepared students for national and international science congresses.</li>
-                        <li>Taught research methodology, ICT basics, programming, and advanced concepts in mathematics and physics.</li>
-                        </ul>
-                    </li>
-                </div>
-                </div>
-            </div>
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Professional Development</h3>
-                    <h3>Taken workshops and courses on</h3>
-                    <ul>
-                            <li>Advanced Microsoft Excel</li>
-                            <li>Power BI</li>
-                            <li>Arduino</li>
-                            <li>Python for Data Analytics</li>
-                            <li>Leadership Development</li>
-                            <li>Cybersecurity Awareness</li>
-                    </ul>
-                        </li>
-                </div>
-            </div>
-            </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Digital Transformation Manager</h3>
-                    <h4>Jamuna Bank PLC | 2019-Present</h4>
-                    <ul>
-                            <li>Designing and developing HRIS solutions to streamline HR operations and enhance employee experiences.</li>
-                            <li>Implementing new HRIS systems, including data migration, UAT, training, and ensuring data security to protect sensitive employee information.</li>
-                            <li>Extracting and analyzing data from HR systems and databases to identify trends, provide insights, and support data-driven decision-making.</li>
-                            <li>Creating reports and dashboards (using Power BI, Excel, Tableau) to track HR metrics and key performance indicators.</li>
-                            <li>Experience in designing and building real-time data pipelines, ETL pipelines, and strong relational database experience with solid PL/SQL concepts and SQL skills.</li>
-                            <li>Expert in data analysis with Python (Numpy, Scipy, Scikit-learn, Pandas, etc.).</li>
-                            <li>Staying up-to-date with industry trends and participating in system upgrades and migrations to optimize HRIS functionality.</li>
-                            <li>Managing employee insurance programs and designing and implementing KPIs to track performance and measure success.</li>
-                            <li>Managing the recruitment process to attract top talent and ensure a diverse and inclusive workforce.</li>
-                            <li>Developing and delivering training and development programs to enhance employee skills and career development opportunities.</li>
-                            <li>Leading teams and delivering results in fast-paced environments while ensuring compliance with legal and regulatory requirements.</li>
-                    </ul>
-                </div>
-            </div>
-                <!-- Add other experiences -->
-            </div>
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Electrical Engineer</h3>
-                    <h4>Unifill Group | Apr 2018 – Aug 2019</h4>
-                    <ul>
-                        <li>Develop and implement sustainable strategies for buildings and facilities to enhance energy efficiency and environmental responsibility, while ensuring compliance with LEED standards.</li>
-                        <li>Conduct site visits to monitor LEED projects, collaborate with internal teams, architects, engineers, and contractors to integrate sustainable principles into design and construction processes, and prepare documentation for LEED certification.</li>
-                        <li>Lead a maintenance and utility team to maintain mechanical and electro-mechanical appliances in the factory/plant, including installation, commissioning, and maintenance of various types of machines and substations.</li>
-                        <li>Develop effective plans and procedures for maintenance and utility-related support in the required arenas.</li>
-                        <li>Maintain all factory equipment and machinery in good working condition for optimum production.</li>
-                        <li>Ensure availability of spares for breakdown and preventive maintenance, and identify measures to improve machinery efficiency.</li>
-                        <li>Provide utility and maintenance-related support to the compliance team, and impart effective safety training to subordinates.</li>
-                        <li>Maintain electrical and fire safety equipment properly.</li>
-                        <li>Stay informed on emerging sustainability practices and incorporate them into the maintenance and utility team's strategies and plans.</li>
-                        <li>Continuously evaluate and improve the factory's energy efficiency and sustainability practices to reduce its environmental impact.</li>
+      <!-- Teaching Experience -->
+      <section id="te">
+          <h2 class="section-title">Teaching Experience</h2>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Graduate Assistant</h3>
+  <h4>Grand Valley State University | Full-time</h4>
+  <p>Aug 2025 – Present · Grand Rapids, Michigan, United States</p>
+  <ul>
+      <li>Supported embedded systems, FPGA, and control engineering laboratories through hardware setup, debugging, and direct technical assistance to students.</li>
+      <li>Developed Verilog modules, testbenches, and simulations using Vivado and ModelSim for digital logic and communication interface experiments.</li>
+      <li>Programmed embedded firmware in C/C++ and Python for microcontrollers and SoC platforms, integrating sensors, actuators, and real-time peripherals.</li>
+      <li>Configured, tested, and validated UART, SPI, I²C, and CAN communication protocols for instructional and research-oriented experiments.</li>
+      <li>Performed hardware bring-up, oscilloscope-based measurements, logic-analyzer testing, and systematic troubleshooting of FPGA and embedded systems.</li>
+      <li>Maintained and calibrated laboratory hardware, including Basys-3 FPGA boards, MSP432 and STM32 microcontrollers, Arduino platforms, and Jetson Nano systems for edge AI applications.</li>
+      <li>Operated CNC routers, lathe machines, milling machines, and metal and woodworking tools to support student projects and prototype fabrication.</li>
+      <li>Assisted with laser-cutting operations, 3D printing workflows, and CAD-to-manufacturing processes using AutoCAD and SolidWorks.</li>
+      <li>Prepared, updated, and standardized technical lab manuals, schematics, wiring diagrams, and instructional documentation.</li>
+      <li>Supported faculty research activities in control modeling, signal processing, embedded artificial intelligence, and hardware–software co-design.</li>
+   </ul>
+          </div>
+        </div>
+          </div>
 
-                    </ul>
-                      
-                </div>
-            </div>
-            </div>
-
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Assistant Engineer</h3>
-                    <h4>Reverie Power & Automation Engineering Ltd. | Oct 2016 –Mar 2018</h4>
-                    <ul>
-                        <li>Planned and designed 11kV and 33kV substations, with over 100 substations completed.</li>
-                        <li>Conducted cost estimation, offer submissions, and coordinated with the sales team while performing market research.</li>
-                        <li>Created 2D and 3D switchgear designs using AutoCAD, SolidWorks, and 3ds Max.</li>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Teaching Assistant (TA)</h3>
+                  <h4>American International University-Bangladesh | 2014-2015</h4>
+                  <ul>
+                      <li>Subjects: Digital Logic Design, Analog Electronics</li>
+                      <li>Assisted with quizzes, exams, and grading.</li>
+                      <li>Conducted lab sessions and supported faculty.</li>
+                  </ul>
+              </div>
+          </div>
+          </div>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>School and Coaching Experience</h3>
+                  <h4>Evergreen International School | 2013-2017</h4>
+                  <ul>
+                  <li><strong>Subjects:</strong> Mathematics, Physics, ICT, and Computer Science (10th–12th grades)</li>
+                  </ul>
+                  <h4>University Admission Coaching | 2013-2017</h4>
+                  <ul>
+                  <li><strong>Subjects:</strong> Mathematics and Physics for university entrance exam preparation</li>
+                  </ul>
+              </div>
+          </div>
+          </div>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Trainer for SPSB (Society for the Popularization of Science, Bangladesh)</h3>
+                  <ul>
+                  <li><strong>Focus:</strong> Mathematics, Science, and Technology training for school students</li>
+                  <li><strong>Responsibilities:</strong>
+                      <ul>
+                      <li>Prepared students for national and international science congresses.</li>
+                      <li>Taught research methodology, ICT basics, programming, and advanced concepts in mathematics and physics.</li>
                       </ul>
-                      
-                    </div>
-                </div>
-            </div>
-        </section>
+                  </li>
+              </div>
+              </div>
+          </div>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Professional Development</h3>
+                  <h3>Taken workshops and courses on</h3>
+                  <ul>
+                          <li>Advanced Microsoft Excel</li>
+                          <li>Power BI</li>
+                          <li>Arduino</li>
+                          <li>Python for Data Analytics</li>
+                          <li>Leadership Development</li>
+                          <li>Cybersecurity Awareness</li>
+                  </ul>
+                      </li>
+              </div>
+          </div>
+          </div>
+      </section>
 
-        <!-- Education Section -->
-        <section id="education">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>Master of Science - Electrical and Computer Engineering</h3>
-                    <h4>Grand Valley State University | Aug 2025-</h4>
-                    <p>CGPA: 4.00/4.00</p>
-                    <div class="score-card">
-                      <div class="score-details">
-                        <h3 class="sub-scores">Completed Courses:</h3>
-                        <div class="sub-scores">
-                          <span>EGR 602 - Professional Aspects of Engineering</span>
-                          <span>EGR 604 - Implementation and Measurement</span>
-                          <span>EGR 601 - Principles of Computer Engineering</span>
-                        </div>
+      <!-- Experience Section -->
+      <section id="experience">
+          <h2 class="section-title">Professional Experience</h2>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Digital Transformation Manager</h3>
+                  <h4>Jamuna Bank PLC | 2019-Present</h4>
+                  <ul>
+                          <li>Designing and developing HRIS solutions to streamline HR operations and enhance employee experiences.</li>
+                          <li>Implementing new HRIS systems, including data migration, UAT, training, and ensuring data security to protect sensitive employee information.</li>
+                          <li>Extracting and analyzing data from HR systems and databases to identify trends, provide insights, and support data-driven decision-making.</li>
+                          <li>Creating reports and dashboards (using Power BI, Excel, Tableau) to track HR metrics and key performance indicators.</li>
+                          <li>Experience in designing and building real-time data pipelines, ETL pipelines, and strong relational database experience with solid PL/SQL concepts and SQL skills.</li>
+                          <li>Expert in data analysis with Python (Numpy, Scipy, Scikit-learn, Pandas, etc.).</li>
+                          <li>Staying up-to-date with industry trends and participating in system upgrades and migrations to optimize HRIS functionality.</li>
+                          <li>Managing employee insurance programs and designing and implementing KPIs to track performance and measure success.</li>
+                          <li>Managing the recruitment process to attract top talent and ensure a diverse and inclusive workforce.</li>
+                          <li>Developing and delivering training and development programs to enhance employee skills and career development opportunities.</li>
+                          <li>Leading teams and delivering results in fast-paced environments while ensuring compliance with legal and regulatory requirements.</li>
+                  </ul>
+              </div>
+          </div>
+              <!-- Add other experiences -->
+          </div>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Electrical Engineer</h3>
+                  <h4>Unifill Group | Apr 2018 – Aug 2019</h4>
+                  <ul>
+                      <li>Develop and implement sustainable strategies for buildings and facilities to enhance energy efficiency and environmental responsibility, while ensuring compliance with LEED standards.</li>
+                      <li>Conduct site visits to monitor LEED projects, collaborate with internal teams, architects, engineers, and contractors to integrate sustainable principles into design and construction processes, and prepare documentation for LEED certification.</li>
+                      <li>Lead a maintenance and utility team to maintain mechanical and electro-mechanical appliances in the factory/plant, including installation, commissioning, and maintenance of various types of machines and substations.</li>
+                      <li>Develop effective plans and procedures for maintenance and utility-related support in the required arenas.</li>
+                      <li>Maintain all factory equipment and machinery in good working condition for optimum production.</li>
+                      <li>Ensure availability of spares for breakdown and preventive maintenance, and identify measures to improve machinery efficiency.</li>
+                      <li>Provide utility and maintenance-related support to the compliance team, and impart effective safety training to subordinates.</li>
+                      <li>Maintain electrical and fire safety equipment properly.</li>
+                      <li>Stay informed on emerging sustainability practices and incorporate them into the maintenance and utility team's strategies and plans.</li>
+                      <li>Continuously evaluate and improve the factory's energy efficiency and sustainability practices to reduce its environmental impact.</li>
+
+                  </ul>
+                    
+              </div>
+          </div>
+          </div>
+
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Assistant Engineer</h3>
+                  <h4>Reverie Power & Automation Engineering Ltd. | Oct 2016 –Mar 2018</h4>
+                  <ul>
+                      <li>Planned and designed 11kV and 33kV substations, with over 100 substations completed.</li>
+                      <li>Conducted cost estimation, offer submissions, and coordinated with the sales team while performing market research.</li>
+                      <li>Created 2D and 3D switchgear designs using AutoCAD, SolidWorks, and 3ds Max.</li>
+                    </ul>
+                    
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+          <h2 class="section-title">Education</h2>
+          <div class="timeline">
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>Master of Science - Electrical and Computer Engineering</h3>
+                  <h4>Grand Valley State University | Aug 2025-</h4>
+                  <p>CGPA: 4.00/4.00</p>
+                  <div class="score-card">
+                    <div class="score-details">
+                      <h3 class="sub-scores">Completed Courses:</h3>
+                      <div class="sub-scores">
+                        <span>EGR 602 - Professional Aspects of Engineering</span>
+                        <span>EGR 604 - Implementation and Measurement</span>
+                        <span>EGR 601 - Principles of Computer Engineering</span>
                       </div>
                     </div>
-                </div>
-                </div>
-                <div class="research-item">
-                <div class="timeline-item">
-                    <h3>B.Sc. in Electrical and Electronics Engineering</h3>
-                    <h4>American International University-Bangladesh | 2013-2017</h4>
-                    <p>CGPA: 3.36/4.00</p>
-                </div>
-            </div>
-            </div>
-        </section>
-
-  <section id="education">
-    <h2 class="section-title">Test Scores</h2> 
-        <div class="score-card">
-          <div class="score-details">
-            <h3 class="sub-scores">IELTS</h3>
-            <span class="overall-score">Overall: 7</span>
-            <div class="sub-scores">
-              <span>Listening: 9</span>
-              <span>Reading: 6.5</span>
-              <span>Writing: 6.0</span>
-              <span>Speaking: 6.5</span>
-            </div>
+                  </div>
+              </div>
+              </div>
+              <div class="research-item">
+              <div class="timeline-item">
+                  <h3>B.Sc. in Electrical and Electronics Engineering</h3>
+                  <h4>American International University-Bangladesh | 2013-2017</h4>
+                  <p>CGPA: 3.36/4.00</p>
+              </div>
           </div>
-        </div>
-      
-        <div class="score-card">
-          <div class="score-details">
-            <h3 class="score-details">GRE</h3>
-            <span class="overall-score">Overall: 310</span>
-            <div class="sub-scores">
-              <span>Quant: 163</span>
-              <span>Verbal: 147</span>
-              <span>AWA: 3.0</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-          <h2 class="section-title">Certifications</h2>
-      
-          <div class="certification-card">
-              <ul>
-                  <li>
-                      <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          CCNA Routing and Switching Certified. Cisco ID: CSCO13545734
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="https://www.udemy.com/certificate/UC-54a1cf34-1f3e-4b50-8ffc-46003ef76068/"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Python for Computer Vision with OpenCV and Deep Learning
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/cert5.png"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          PMP Exam Preparation Course
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/cert5.png"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Prepare for the ISC2 Information Systems Security Professional (CISSP)
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/cert5.png"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Python Data Analysis (2020)
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/cert5.png"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Develop Your AI Skills as a Cybersecurity Professional – LinkedIn Learning
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/cert5.png"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          AWS Certified Solutions Architect – Associate
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/cert5.png"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Python Programming Bible | Networking, GUI, Email, XML, CGI
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Data Analysis with Pandas and Python – Udemy
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          MATLAB / SIMULINK Bible | Go from Zero to Hero
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/CertificateOfCompletion_Power BI Data Modeling with DAX.pdf"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Power BI Data Modeling with DAX
-                      </a>
-                  </li>
-      
-                  <li>
-                      <a href="./assets/certificate/CertificateOfCompletion_Learning SQL Programming 2017.pdf"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         class="no-underline">
-                          Learning SQL Programming (2017)
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      
-          <!-- Hover preview container -->
-          <div id="certificate-preview">
-              <iframe src="" title="Certificate Preview"></iframe>
           </div>
       </section>
-      
-        <!-- CO-CURRICULAR ACTIVITIES -->
-        <section id="volunteering">
-            <h2 class="section-title">CO-CURRICULAR ACTIVITIES</h2>
-            <div class="research-item">
-            <div class="certification-grid">
-                <div class="certification-card">
-                    <li>	Founder Member and Admin of ExAIUBian, Biggest private university student association in Bangladesh. 	</li>
-                    <li>	Founding member and administrator, Gaibandha Students Organization: society aimed at aiding others during various natural disasters like floods, 
-                            storms & fostering the development of underprivileged students.	</li>
-                    <li>	"Electronic Communications Coordinator, IEEE YP Bangladesh.	"	</li>
-                    <li>	"General Secretary, IEEE AIUB Student Branch.	JAN 2014 - DEC 2016"	</li>
-                    <li>	Successfully led a team of more than 300 IEEE Members and 30 IEEE volunteers.	</li>
-                    <li>	Organized more than 100 National & International Seminar, Workshop, and Competition etc.	</li>
-                    <li>	Instructor, Workshop on “Arduino and Obstacle avoiding Robot” organized by IEEE AIUB SB -2017	</li>
-                    <li>	Volunteer, NASA Space App and ICT Innovation forum Bangladesh. (2017)	</li>
-                    <li>	Academic Mentor, Society for the Popularization of Science, Bangladesh. Year: 2014 to 2016	</li>
-                </div>
-            </div>
-                <!-- Add other certifications -->
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> nahidhasangb@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Manzana Ct, NW, Grand Rapids, MI 49534, USA</p>
-            </div>
-        </section>
-    </div>
+<section id="education">
+  <h2 class="section-title">Test Scores</h2> 
+      <div class="score-card">
+        <div class="score-details">
+          <h3 class="sub-scores">IELTS</h3>
+          <span class="overall-score">Overall: 7</span>
+          <div class="sub-scores">
+            <span>Listening: 9</span>
+            <span>Reading: 6.5</span>
+            <span>Writing: 6.0</span>
+            <span>Speaking: 6.5</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="score-card">
+        <div class="score-details">
+          <h3 class="score-details">GRE</h3>
+          <span class="overall-score">Overall: 310</span>
+          <div class="sub-scores">
+            <span>Quant: 163</span>
+            <span>Verbal: 147</span>
+            <span>AWA: 3.0</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+      <!-- Certifications Section -->
+      <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+    
+        <div class="certification-card">
+            <ul>
+                <li>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        CCNA Routing and Switching Certified. Cisco ID: CSCO13545734
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="https://www.udemy.com/certificate/UC-54a1cf34-1f3e-4b50-8ffc-46003ef76068/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Python for Computer Vision with OpenCV and Deep Learning
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/cert5.png"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        PMP Exam Preparation Course
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/cert5.png"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Prepare for the ISC2 Information Systems Security Professional (CISSP)
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/cert5.png"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Python Data Analysis (2020)
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/cert5.png"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Develop Your AI Skills as a Cybersecurity Professional – LinkedIn Learning
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/cert5.png"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        AWS Certified Solutions Architect – Associate
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/cert5.png"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Python Programming Bible | Networking, GUI, Email, XML, CGI
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Data Analysis with Pandas and Python – Udemy
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        MATLAB / SIMULINK Bible | Go from Zero to Hero
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/CertificateOfCompletion_Power BI Data Modeling with DAX.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Power BI Data Modeling with DAX
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="./assets/certificate/CertificateOfCompletion_Learning SQL Programming 2017.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="no-underline">
+                        Learning SQL Programming (2017)
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Hover preview container -->
+        <div id="certificate-preview">
+            <iframe src="" title="Certificate Preview"></iframe>
+        </div>
+    </section>
+    
+      <!-- CO-CURRICULAR ACTIVITIES -->
+      <section id="volunteering">
+          <h2 class="section-title">CO-CURRICULAR ACTIVITIES</h2>
+          <div class="research-item">
+          <div class="certification-grid">
+              <div class="certification-card">
+                  <li>	Founder Member and Admin of ExAIUBian, Biggest private university student association in Bangladesh. 	</li>
+                  <li>	Founding member and administrator, Gaibandha Students Organization: society aimed at aiding others during various natural disasters like floods, 
+                          storms & fostering the development of underprivileged students.	</li>
+                  <li>	"Electronic Communications Coordinator, IEEE YP Bangladesh.	"	</li>
+                  <li>	"General Secretary, IEEE AIUB Student Branch.	JAN 2014 - DEC 2016"	</li>
+                  <li>	Successfully led a team of more than 300 IEEE Members and 30 IEEE volunteers.	</li>
+                  <li>	Organized more than 100 National & International Seminar, Workshop, and Competition etc.	</li>
+                  <li>	Instructor, Workshop on “Arduino and Obstacle avoiding Robot” organized by IEEE AIUB SB -2017	</li>
+                  <li>	Volunteer, NASA Space App and ICT Innovation forum Bangladesh. (2017)	</li>
+                  <li>	Academic Mentor, Society for the Popularization of Science, Bangladesh. Year: 2014 to 2016	</li>
+              </div>
+          </div>
+              <!-- Add other certifications -->
+          </div>
+      </section>
 
-        // Active link highlighting
-        window.addEventListener('scroll', () => {
-            let sections = document.querySelectorAll('section');
-            let navLinks = document.querySelectorAll('.nav-links a');
-            
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 150;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute('id');
-
-                if(top >= offset && top < offset + height) {
-                    navLinks.forEach(links => {
-                        links.classList.remove('active');
-                        if(links.getAttribute('href') === `#${id}`) {
-                            links.classList.add('active');
-                        }
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
-
-
-
+      <!-- Contact Section -->
+      <section id="contact">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact-info">
+              <p><i class="fas fa-envelope"></i> nahidhasangb@gmail.com</p>
+              <p><i class="fas fa-map-marker-alt"></i> Manzana Ct, NW, Grand Rapids, MI 49534, USA</p>
+          </div>
+      </section>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/certificate-preview.js"></script>
+  </body>
+  </html>
+  

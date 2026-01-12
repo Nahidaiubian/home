@@ -8,6 +8,12 @@
     padding: 1rem;
     color: white;
 }
+.profile h4 a,
+.profile h4 a strong {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
 
 .profile img {
     width: 150px;
@@ -16,12 +22,28 @@
     border: 3px solid var(--secondary-color);
 }
 
+.nav-links a:hover {
+    transform: translateY(-4px);
+  }
+
 .nav-links a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     color: white;
-    padding: 0.5rem 0;
+    text-decoration: none;
+    padding: 0.6rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    white-space: normal;
 }
+.nav-links a i {
+    min-width: 18px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
 
 .main-content {
     margin-left: 300px;

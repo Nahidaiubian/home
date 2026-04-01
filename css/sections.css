@@ -405,3 +405,154 @@
     }
 }
 
+/* ROS 2 course outline: schedule table + per-class links */
+.research-item table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.research-item table th,
+.research-item table td {
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.65rem;
+    vertical-align: top;
+}
+
+.research-item table thead th {
+    background: var(--surface-soft);
+    color: var(--primary-color);
+    font-weight: 700;
+    text-align: left;
+}
+
+.research-item table tbody td:first-child {
+    font-weight: 700;
+    color: var(--primary-color);
+    white-space: nowrap;
+    width: 3.5rem;
+}
+
+.research-item table tbody td a.schedule-class-link {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.research-item table tbody td a.schedule-class-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+/* ROS 2 lecture PDF viewer (PDF.js) */
+.ros2-pdf-panel {
+    margin-top: 0.75rem;
+}
+
+.ros2-pdf-path-hint code {
+    font-size: 0.88em;
+    padding: 0.12rem 0.35rem;
+    border-radius: 6px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+}
+
+.ros2-pdf-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+    padding: 0.45rem 0.55rem;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.ros2-pdf-toolbar button {
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    min-width: 2.25rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.ros2-pdf-toolbar button:hover {
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(37, 99, 235, 0.35);
+}
+
+.ros2-pdf-toolbar button:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+.ros2-pdf-page-label {
+    margin-left: auto;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.ros2-pdf-status {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    padding: 1rem 0;
+}
+
+.ros2-pdf-native-iframe {
+    display: block;
+    width: 100%;
+    min-height: min(85vh, 1100px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: #525659;
+}
+
+.ros2-pdf-pages {
+    max-height: min(85vh, 1100px);
+    overflow: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: #525659;
+    padding: 0.75rem;
+    scrollbar-gutter: stable;
+}
+
+.ros2-pdf-pages.ros2-pdf-pages--native {
+    padding: 0;
+    overflow: hidden;
+    max-height: none;
+}
+
+.ros2-pdf-page-wrap {
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.ros2-pdf-page-wrap:last-child {
+    margin-bottom: 0;
+}
+
+.ros2-pdf-page-canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.ros2-pdf-error {
+    color: #b91c1c;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    padding: 0.5rem 0;
+}
+

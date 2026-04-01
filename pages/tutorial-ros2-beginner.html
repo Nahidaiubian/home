@@ -29,10 +29,106 @@
 
   <div class="main-content">
     <section id="tutorial">
-      <h2 class="section-title">ROS2 Beginner Tutorial</h2>
+      <h2 class="section-title">Robotics With ROS2</h2>
       <div class="research-item">
         <div class="research-description">
-          <p>Introductory notes for ROS 2: workspaces, packages, nodes, topics, and running your first publisher–subscriber example. Content will be expanded here.</p>
+          <p>Sixteen weeks, 32 class sessions (two per week): concepts in Class 1, hands-on work in Class 2. Each topic links to a detail page with notes and an embedded PDF viewer. For each session, save your handout as <code>lecture.pdf</code> in the matching folder <code>assets/Tutorial/WxCy</code> (for example <code>W1C1</code> for week&nbsp;1, class&nbsp;1; <code>W1C2</code> for week&nbsp;1, class&nbsp;2).</p>
+        </div>
+      </div>
+      <div class="research-item">
+        <h3 style="margin: 0 0 1rem; font-size: 1.2rem; font-weight: 700; color: var(--primary-color);">Schedule (16 weeks · 32 classes)</h3>
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <table>
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Class 1 (Concepts)</th>
+                <th>Class 2 (Hands-on / Deep dive)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="tutorial-ros2/w01-c1.html" class="schedule-class-link">Course intro, ROS 2 overview, DDS, distributions</a></td>
+                <td><a href="tutorial-ros2/w01-c2.html" class="schedule-class-link">ROS 2 workspace setup, colcon, packages, nodes, CLI tools</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="tutorial-ros2/w02-c1.html" class="schedule-class-link">ROS 2 communication: topics &amp; QoS</a></td>
+                <td><a href="tutorial-ros2/w02-c2.html" class="schedule-class-link">Publishers/subscribers in Python/C++, rqt, ros2 topic tools</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="tutorial-ros2/w03-c1.html" class="schedule-class-link">Services, actions, parameters</a></td>
+                <td><a href="tutorial-ros2/w03-c2.html" class="schedule-class-link">Designing APIs with services/actions, parameter management</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="tutorial-ros2/w04-c1.html" class="schedule-class-link">Launch, composition, lifecycle nodes</a></td>
+                <td><a href="tutorial-ros2/w04-c2.html" class="schedule-class-link">Launch files in Python, component composition, lifecycle patterns</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="tutorial-ros2/w05-c1.html" class="schedule-class-link">TF2 and time in ROS 2</a></td>
+                <td><a href="tutorial-ros2/w05-c2.html" class="schedule-class-link">Frames for mobile bases/manipulators, tf2 tools, bagging and replay</a></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="tutorial-ros2/w06-c1.html" class="schedule-class-link">URDF/Xacro and robot modeling</a></td>
+                <td><a href="tutorial-ros2/w06-c2.html" class="schedule-class-link">Building a robot description, RViz2 visualization, basic collision/geometries</a></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="tutorial-ros2/w07-c1.html" class="schedule-class-link">Gazebo/ignition simulation with ROS 2</a></td>
+                <td><a href="tutorial-ros2/w07-c2.html" class="schedule-class-link">World/robot plugins, sim–real interfaces, testing in simulation</a></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><a href="tutorial-ros2/w08-c1.html" class="schedule-class-link">Sensors and perception pipelines</a></td>
+                <td><a href="tutorial-ros2/w08-c2.html" class="schedule-class-link">Camera/LiDAR/IMU integration, basic perception node graphs</a></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><a href="tutorial-ros2/w09-c1.html" class="schedule-class-link">ROS 2 Control and hardware interfaces</a></td>
+                <td><a href="tutorial-ros2/w09-c2.html" class="schedule-class-link">Controllers, hardware_interface, joint state/command, example arm/base</a></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><a href="tutorial-ros2/w10-c1.html" class="schedule-class-link">Navigation stack (Nav2) concepts</a></td>
+                <td><a href="tutorial-ros2/w10-c2.html" class="schedule-class-link">Map server, localization, planners, controllers, BT navigator</a></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><a href="tutorial-ros2/w11-c1.html" class="schedule-class-link">Nav2 hands-on and tuning</a></td>
+                <td><a href="tutorial-ros2/w11-c2.html" class="schedule-class-link">Bringing up Nav2 on a differential/omni platform, costmaps, behavior trees</a></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><a href="tutorial-ros2/w12-c1.html" class="schedule-class-link">Manipulation with MoveIt 2</a></td>
+                <td><a href="tutorial-ros2/w12-c2.html" class="schedule-class-link">Motion planning pipelines, planning scenes, pick-and-place demos</a></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td><a href="tutorial-ros2/w13-c1.html" class="schedule-class-link">Multi-robot and distributed systems</a></td>
+                <td><a href="tutorial-ros2/w13-c2.html" class="schedule-class-link">Namespaces, remapping, discovery, communication patterns</a></td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td><a href="tutorial-ros2/w14-c1.html" class="schedule-class-link">Testing, debugging, logging, profiling</a></td>
+                <td><a href="tutorial-ros2/w14-c2.html" class="schedule-class-link">ros2 test, GTest, launch testing, performance tools</a></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td><a href="tutorial-ros2/w15-c1.html" class="schedule-class-link">Deployment: containers, snaps, real-time &amp; safety</a></td>
+                <td><a href="tutorial-ros2/w15-c2.html" class="schedule-class-link">Docker, snaps, launch-on-boot, RT kernels, safety patterns</a></td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td><a href="tutorial-ros2/w16-c1.html" class="schedule-class-link">Student project presentations</a></td>
+                <td><a href="tutorial-ros2/w16-c2.html" class="schedule-class-link">System design critique, lessons learned, future extensions</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

@@ -1,26 +1,60 @@
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.45rem, 2.1vw, 2rem);
     color: var(--primary-color);
-    position: relative;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
 }
 
 .section-title::after {
-    display: none;
+    content: "";
+    display: block;
+    width: 76px;
+    height: 4px;
+    margin-top: 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
 }
 
+.timeline {
+    position: relative;
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+}
 
 .timeline::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 2px;
+    background: linear-gradient(var(--secondary-color), rgba(37, 99, 235, 0));
+    left: 14px;
+    top: 8px;
+    bottom: 8px;
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 1.1rem;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     background: var(--secondary-color);
-    left: 10px;
-    height: 100%;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+    position: absolute;
+    left: -4px;
+    top: 0.55rem;
 }
 
 .score-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: var(--surface);
+    padding: 1.2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
 }

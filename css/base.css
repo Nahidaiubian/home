@@ -1,20 +1,51 @@
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #27ae60;
-    --text-color: #333;
+    --bg: #f3f7fc;
+    --surface: #ffffff;
+    --surface-soft: #f8fbff;
+    --text: #1f2937;
+    --text-muted: #6b7280;
+    --primary-color: #1f3a5f;
+    --secondary-color: #2563eb;
+    --accent-color: #0ea5a4;
+    --border: #dbe7f5;
+    --ring: rgba(37, 99, 235, 0.2);
+    --shadow-sm: 0 4px 10px rgba(18, 39, 73, 0.06);
+    --shadow-md: 0 10px 30px rgba(18, 39, 73, 0.1);
+    --shadow-lg: 0 20px 40px rgba(18, 39, 73, 0.14);
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 95% 10%, #d9e9ff 0, rgba(217, 233, 255, 0) 34%),
+        radial-gradient(circle at 8% 70%, #e1f9f9 0, rgba(225, 249, 249, 0) 30%),
+        var(--bg);
+}
+
+a {
+    color: inherit;
+}
+
+p,
+li {
+    color: var(--text);
 }
 
 .no-underline {
@@ -24,10 +55,13 @@ body {
 
 .no-underline:hover {
     text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
+    width: 1.25rem;
+    height: 1.25rem;
     object-fit: contain;
+    vertical-align: middle;
 }

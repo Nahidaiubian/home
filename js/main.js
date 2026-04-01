@@ -1,26 +1,3 @@
-(function initTutorialsDropdown() {
-    const dd = document.querySelector(".tutorials-dropdown");
-    const btn = document.getElementById("tutorials-menu-btn");
-    if (!dd || !btn) return;
-
-    function setOpen(open) {
-        dd.classList.toggle("is-open", open);
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-    }
-
-    btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        setOpen(!dd.classList.contains("is-open"));
-    });
-
-    document.addEventListener("click", () => setOpen(false));
-    dd.addEventListener("click", (e) => e.stopPropagation());
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") setOpen(false);
-    });
-})();
-
 const navLinks = document.querySelectorAll(".nav-links a");
 const sections = document.querySelectorAll("section[id]");
 

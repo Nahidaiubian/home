@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jetson Nano Beginner Tutorial | A N M Nahid Hasan</title>
+  <title>Jetson Orin Nano Beginner Tutorial | A N M Nahid Hasan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -29,10 +29,106 @@
 
   <div class="main-content">
     <section id="tutorial">
-      <h2 class="section-title">Jetson Nano Beginner Tutorial</h2>
+      <h2 class="section-title">Jetson Orin Nano Beginner Tutorial</h2>
       <div class="research-item">
         <div class="research-description">
-          <p>Setup, flashing, power modes, and running your first inference or vision demo on NVIDIA Jetson Nano. Content will be expanded here.</p>
+          <p>Sixteen weeks, 32 class sessions (two per week): concepts in Class 1, hands-on work in Class 2. Each topic links to a detail page with notes and an embedded PDF viewer. For each session, save your handout as <code>lecture.pdf</code> in the matching folder <code>assets/Tutorial/JetsonOrinNano/WxCy</code> (for example <code>W1C1</code> for week&nbsp;1, class&nbsp;1; <code>W1C2</code> for week&nbsp;1, class&nbsp;2).</p>
+        </div>
+      </div>
+      <div class="research-item">
+        <h3 style="margin: 0 0 1rem; font-size: 1.2rem; font-weight: 700; color: var(--primary-color);">Schedule (16 weeks · 32 classes)</h3>
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <table>
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Class 1 (Concepts)</th>
+                <th>Class 2 (Hands-on / Deep dive)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="tutorial-jetson-orin-nano/w01-c1.html" class="schedule-class-link">Course intro; what Jetson Orin Nano Super is; board overview; use cases</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w01-c2.html" class="schedule-class-link">Unboxing, hardware tour, SD card flashing, first boot, basic setup</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="tutorial-jetson-orin-nano/w02-c1.html" class="schedule-class-link">JetPack, Ubuntu on Jetson, software stack overview</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w02-c2.html" class="schedule-class-link">System update, package installation, terminal basics, file system navigation</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="tutorial-jetson-orin-nano/w03-c1.html" class="schedule-class-link">Linux essentials for beginners</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w03-c2.html" class="schedule-class-link">Working with files, permissions, editors, SSH, remote access</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="tutorial-jetson-orin-nano/w04-c1.html" class="schedule-class-link">Python basics on Jetson</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w04-c2.html" class="schedule-class-link">Writing and running Python scripts; virtual environments; pip packages</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="tutorial-jetson-orin-nano/w05-c1.html" class="schedule-class-link">Performance and power modes on Jetson</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w05-c2.html" class="schedule-class-link">Using nvpmodel, jetson_clocks, monitoring CPU/GPU/RAM/temperature</a></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="tutorial-jetson-orin-nano/w06-c1.html" class="schedule-class-link">GPIO and hardware interfacing basics</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w06-c2.html" class="schedule-class-link">Controlling LED, reading buttons, simple GPIO projects</a></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="tutorial-jetson-orin-nano/w07-c1.html" class="schedule-class-link">Cameras on Jetson: CSI vs USB, image pipeline basics</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w07-c2.html" class="schedule-class-link">Connecting a camera, testing video input, capturing images and video</a></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><a href="tutorial-jetson-orin-nano/w08-c1.html" class="schedule-class-link">OpenCV fundamentals for edge devices</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w08-c2.html" class="schedule-class-link">Image read/display/save, drawing, resizing, color spaces, webcam streaming</a></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><a href="tutorial-jetson-orin-nano/w09-c1.html" class="schedule-class-link">Computer vision basics</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w09-c2.html" class="schedule-class-link">Thresholding, contours, edge detection, simple object tracking</a></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><a href="tutorial-jetson-orin-nano/w10-c1.html" class="schedule-class-link">Deep learning on Jetson: PyTorch and pretrained models</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w10-c2.html" class="schedule-class-link">Installing/running PyTorch; image classification with a pretrained network</a></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><a href="tutorial-jetson-orin-nano/w11-c1.html" class="schedule-class-link">Object detection concepts</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w11-c2.html" class="schedule-class-link">Running a pretrained detection model on camera input in real time</a></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><a href="tutorial-jetson-orin-nano/w12-c1.html" class="schedule-class-link">Model optimization and TensorRT basics</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w12-c2.html" class="schedule-class-link">Converting and benchmarking an inference model for faster execution</a></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td><a href="tutorial-jetson-orin-nano/w13-c1.html" class="schedule-class-link">Building small edge AI applications</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w13-c2.html" class="schedule-class-link">Project: smart camera, people detector, or simple alert system</a></td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td><a href="tutorial-jetson-orin-nano/w14-c1.html" class="schedule-class-link">Audio, sensors, and multimodal edge projects</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w14-c2.html" class="schedule-class-link">Microphone or sensor integration; combining sensor input with AI output</a></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td><a href="tutorial-jetson-orin-nano/w15-c1.html" class="schedule-class-link">Deployment and reliability for Jetson projects</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w15-c2.html" class="schedule-class-link">Autostart apps, Docker basics, remote monitoring, troubleshooting</a></td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td><a href="tutorial-jetson-orin-nano/w16-c1.html" class="schedule-class-link">Final beginner projects and demos</a></td>
+                <td><a href="tutorial-jetson-orin-nano/w16-c2.html" class="schedule-class-link">Project presentations, optimization review, next steps toward robotics/ROS 2</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

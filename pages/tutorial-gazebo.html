@@ -29,10 +29,106 @@
 
   <div class="main-content">
     <section id="tutorial">
-      <h2 class="section-title">Gazebo Tutorial</h2>
+      <h2 class="section-title">Gazebo Simulation</h2>
       <div class="research-item">
         <div class="research-description">
-          <p>Simulation basics: worlds, models, sensors, and integrating Gazebo with ROS 2 for robotics testing. Content will be expanded here.</p>
+          <p>Sixteen weeks, 32 class sessions (two per week): concepts in Class 1, hands-on work in Class 2. Each topic links to a detail page with notes and an embedded PDF viewer. For each session, save your handout as <code>lecture.pdf</code> in the matching folder <code>assets/Tutorial/Gazebo/WxCy</code> (for example <code>W1C1</code> for week&nbsp;1, class&nbsp;1; <code>W1C2</code> for week&nbsp;1, class&nbsp;2).</p>
+        </div>
+      </div>
+      <div class="research-item">
+        <h3 style="margin: 0 0 1rem; font-size: 1.2rem; font-weight: 700; color: var(--primary-color);">Schedule (16 weeks · 32 classes)</h3>
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <table>
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Class 1 (Concepts)</th>
+                <th>Class 2 (Hands-on / Deep dive)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="tutorial-gazebo/w01-c1.html" class="schedule-class-link">Course intro; role of simulation; Gazebo Classic vs Ignition vs Gazebo Sim</a></td>
+                <td><a href="tutorial-gazebo/w01-c2.html" class="schedule-class-link">Installing Gazebo Sim and ROS 2; running example worlds; GUI tour</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="tutorial-gazebo/w02-c1.html" class="schedule-class-link">Gazebo architecture: server, client, worlds, SDF</a></td>
+                <td><a href="tutorial-gazebo/w02-c2.html" class="schedule-class-link">Editing and launching stock worlds; experimenting with physics and lighting</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="tutorial-gazebo/w03-c1.html" class="schedule-class-link">SDF and world files: models, links, joints, sensors</a></td>
+                <td><a href="tutorial-gazebo/w03-c2.html" class="schedule-class-link">Building a simple world and static objects in SDF; resource paths</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="tutorial-gazebo/w04-c1.html" class="schedule-class-link">Robot modeling for simulation (URDF ↔ SDF)</a></td>
+                <td><a href="tutorial-gazebo/w04-c2.html" class="schedule-class-link">Converting URDF/Xacro robots to SDF; visualizing in Gazebo Sim and RViz2</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="tutorial-gazebo/w05-c1.html" class="schedule-class-link">Dynamics and physics engines in Gazebo</a></td>
+                <td><a href="tutorial-gazebo/w05-c2.html" class="schedule-class-link">Tuning physics parameters, contact properties, and constraints for robots</a></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="tutorial-gazebo/w06-c1.html" class="schedule-class-link">Sensors in simulation: cameras, LiDAR, IMU, GPS</a></td>
+                <td><a href="tutorial-gazebo/w06-c2.html" class="schedule-class-link">Adding sensor plugins to robots; testing sensor topics and noise models</a></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="tutorial-gazebo/w07-c1.html" class="schedule-class-link">Gazebo plugins: world, model, sensor, system</a></td>
+                <td><a href="tutorial-gazebo/w07-c2.html" class="schedule-class-link">Writing a simple C++ model plugin; controlling a robot in simulation</a></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><a href="tutorial-gazebo/w08-c1.html" class="schedule-class-link">ROS 2–Gazebo integration concepts (ros_gz_bridge, sim interfaces)</a></td>
+                <td><a href="tutorial-gazebo/w08-c2.html" class="schedule-class-link">Bridging Gazebo topics/services/actions to ROS 2; teleop of a sim robot</a></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><a href="tutorial-gazebo/w09-c1.html" class="schedule-class-link">Building custom robots for Gazebo Sim</a></td>
+                <td><a href="tutorial-gazebo/w09-c2.html" class="schedule-class-link">Full pipeline: design URDF/Xacro → export SDF → spawn into custom world</a></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><a href="tutorial-gazebo/w10-c1.html" class="schedule-class-link">Building custom worlds and environments</a></td>
+                <td><a href="tutorial-gazebo/w10-c2.html" class="schedule-class-link">Designing structured test arenas; importing meshes and assets</a></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><a href="tutorial-gazebo/w11-c1.html" class="schedule-class-link">Advanced GUI and server configuration; logging and datasets</a></td>
+                <td><a href="tutorial-gazebo/w11-c2.html" class="schedule-class-link">Configuring GUI panels; logging world state and sensor data; replay</a></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><a href="tutorial-gazebo/w12-c1.html" class="schedule-class-link">Simulated navigation: Nav2 in Gazebo</a></td>
+                <td><a href="tutorial-gazebo/w12-c2.html" class="schedule-class-link">Bringing up Nav2 on a Gazebo robot; maps, costmaps, navigation scenarios</a></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td><a href="tutorial-gazebo/w13-c1.html" class="schedule-class-link">Simulated manipulation: arms, grippers, contact-rich tasks</a></td>
+                <td><a href="tutorial-gazebo/w13-c2.html" class="schedule-class-link">Simulating a manipulator with Gazebo + MoveIt 2; grasping experiments</a></td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td><a href="tutorial-gazebo/w14-c1.html" class="schedule-class-link">Multi-robot simulation and scalability</a></td>
+                <td><a href="tutorial-gazebo/w14-c2.html" class="schedule-class-link">Multiple robots in one world; namespaces, performance tuning, headless runs</a></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td><a href="tutorial-gazebo/w15-c1.html" class="schedule-class-link">From sim to real: fidelity, validation, and limits</a></td>
+                <td><a href="tutorial-gazebo/w15-c2.html" class="schedule-class-link">Comparing sim vs real logs; calibrating models; scenario stress testing</a></td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td><a href="tutorial-gazebo/w16-c1.html" class="schedule-class-link">Final project presentations</a></td>
+                <td><a href="tutorial-gazebo/w16-c2.html" class="schedule-class-link">System demos: custom world, robot, plugins, and ROS 2 integration</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

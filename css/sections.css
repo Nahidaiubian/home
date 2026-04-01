@@ -53,6 +53,20 @@
     font-weight: 500;
 }
 
+.project-category {
+    margin: 1.1rem 0 0.65rem;
+}
+
+.category-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 0.52rem 0.78rem;
+    border-left: 4px solid var(--secondary-color);
+    background: var(--surface-soft);
+    border-radius: 10px;
+}
+
 .interest-item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
@@ -122,11 +136,29 @@
     margin-bottom: 0.7rem;
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.research-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
 .research-item:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
+}
+
+.research-item:hover::before {
+    opacity: 1;
 }
 
 .research-title {
@@ -152,6 +184,19 @@
     border: 1px solid var(--border);
 }
 
+.research-details span a {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.research-details span a:hover {
+    color: #1e40af;
+}
+
+.research-description p {
+    color: var(--text-muted);
+}
+
 .research-description {
     color: var(--text-muted);
     line-height: 1.75;
@@ -160,6 +205,12 @@
 
 .score-card {
     margin-bottom: 0.95rem;
+}
+
+.test-name {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-right: 0.35rem;
 }
 
 .score-details {
@@ -266,6 +317,51 @@
     line-height: 1.6;
     color: var(--text-muted);
     margin: 0;
+}
+
+.contact-info {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.contact-info p {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    width: fit-content;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+}
+
+#certifications ul li {
+    margin-bottom: 0.55rem;
+}
+
+#certifications .certificate-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.72rem;
+    border-radius: 999px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+#certifications .certificate-link::before {
+    content: "\f0a4";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+}
+
+#certifications .certificate-link:hover {
+    transform: translateX(4px);
+    border-color: #aac7ef;
+    color: #1e40af;
 }
 
 #skills-preview::-webkit-scrollbar {

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A N M Nahid Hasan - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet"
@@ -16,11 +19,38 @@
   <link rel="stylesheet" href="css/sections.css">
 </head>
 
-<body>
+<body class="has-topbar">
+  <!-- Top bar: Tutorials -->
+  <header class="top-bar" role="banner">
+    <div class="top-bar-inner">
+      <span class="top-bar-brand">Portfolio</span>
+      <nav class="top-bar-nav" aria-label="Tutorials">
+        <div class="dropdown tutorials-dropdown">
+          <button type="button" class="dropdown-toggle" id="tutorials-menu-btn" aria-expanded="false" aria-haspopup="true" aria-controls="tutorials-submenu">
+            <i class="fas fa-book-open" aria-hidden="true"></i>
+            Tutorials
+            <i class="fas fa-chevron-down dropdown-chevron" aria-hidden="true"></i>
+          </button>
+          <ul class="dropdown-menu" id="tutorials-submenu" role="menu" aria-labelledby="tutorials-menu-btn">
+            <li role="none"><a href="./pages/tutorial-ros2-beginner.html" role="menuitem">ROS2 Beginner Tutorial</a></li>
+            <li role="none"><a href="./pages/tutorial-computer-vision-beginner.html" role="menuitem">Computer Vision Beginner Tutorial</a></li>
+            <li role="none"><a href="./pages/tutorial-jetson-nano-beginner.html" role="menuitem">Jetson Nano Beginner Tutorial</a></li>
+            <li role="none"><a href="./pages/tutorial-gazebo.html" role="menuitem">Gazebo Tutorial</a></li>
+            <li role="none"><a href="./pages/tutorial-more.html" role="menuitem">More tutorials</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
   <!-- Sidebar Navigation -->
   <nav class="sidebar">
       <div class="profile">
-          <img src="./assets/profile/1681276668008.jpg" alt="Nahid Hasan">
+          <img
+            src="assets/profile/1681276668008.jpg"
+            alt="Portrait of A N M Nahid Hasan"
+            loading="eager"
+            decoding="async">
           <h2>A N M Nahid Hasan</h2>
           <p>Digital Transformation Expert</p>
           <h4><a href="./assets/CV/CV A N M NAHID HASAN.pdf" class="no-underline" target="_blank" rel="noopener noreferrer"><i class="fas fa-regular fa-file"></i> CV Download Here</a></h4>
@@ -54,10 +84,10 @@
 
             <!-- Facebook -->
             <li class="social-item facebook">
-              <a href="https://facebook.com/yourprofile" 
+              <a href="https://facebook.com/" 
                  target="_blank" 
                  rel="noopener noreferrer"
-                 aria-label="Facebook profile">
+                 aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
@@ -74,10 +104,10 @@
         
             <!-- ResearchGate -->
             <li class="social-item researchgate">
-              <a href="https://researchgate.net/profile/yourprofile" 
+              <a href="https://www.researchgate.net/" 
                  target="_blank" 
                  rel="noopener noreferrer"
-                 aria-label="ResearchGate profile">
+                 aria-label="ResearchGate">
                 <i class="fab fa-researchgate"></i>
               </a>
             </li>
@@ -137,62 +167,160 @@
           </div>
       </div>
   </section>
-                  <!-- Project Experience Section -->
-  <section id="project-experience">
-      <h2 class="section-title">Project Experience</h2>
 
-      <div class="research-item">
-              <h3 class="research-title">Worked as Team Lead in Paperless Banking Activities of Jamuna Bank</h3>
-              <div class="research-description">
-                  <p>Led cross-functional execution of paperless banking initiatives to reduce manual processing and improve operational efficiency across branches.</p>
-              </div>
-              <div class="research-details">
-                 
-                  <span class="supervisor"><a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class="no-underline" rel="noopener noreferrer"><strong>Click Here</strong></a></span>
-                  
-              </div>
-      </div>
-      <div class="research-item">
-          <h3 class="research-title"> Implementation of an AI-based attendance system and HRIS system across more than 170 branches, serving over 5,000 employees to streamline attendance management. </h3>
-          <div class="research-description">
-              <p>Designed and deployed scalable AI attendance and HRIS workflows, enabling centralized reporting and faster HR decision-making at enterprise scale.</p>
-          </div>
-          <div class="research-details">
-              <span class="supervisor"><a href="./pages/Experinece.html" target="_blank" class="no-underline" rel="noopener noreferrer"><strong>Click Here</strong></a></span>
-          </div>
-         
+  <!-- Project Experience Section -->
+<section id="project-experience">
+  <h2 class="section-title">Projects and Engineering Experience</h2>
+
+  <!-- ===================== -->
+  <!-- Research & Academic -->
+  <!-- ===================== -->
+  <div class="project-category">
+      <h3 class="category-title">Research and Academic Projects</h3>
   </div>
-  <div class="research-item" >
-      <h3 class="research-title"> EGR 604: Implementation & Measurement—the Autonomous Path-Finding Cargo Cart (APCC) </h3>
-      <div class="research-description">
-          <p>Built and evaluated an autonomous cargo cart prototype focused on navigation logic, sensor integration, and real-time path-finding performance.</p>
-      </div>
-      <div class="research-details">
-      
-          <span class="supervisor"><a href="https://www.linkedin.com/posts/anmnahidhasan_i-am-excited-to-share-our-final-project-for-activity-7402749305465364480-hHQ0?utm_source=share&utm_medium=member_desktop&rcm=ACoAABQw7pUByA_G7tKVTa3_k4IuJrM4VPmgKNc" target="_blank" class="no-underline" rel="noopener noreferrer"><strong>Click Here</strong></a></span>
-      </div>
-</div>
+
+  <!-- ROS2 Workcell -->
   <div class="research-item">
-      <h3 class="research-title">Implemention new MFS (Shadhin) and Core Banking software with data migration, UAT and security.</h3>
+      <h3 class="research-title">ROS2-Based Edge AI Robotic Workcell (Ongoing)</h3>
       <div class="research-description">
-          <p>Implemented core banking and mobile financial services systems, managing migration, UAT validation, and security readiness for production rollout.</p>
+          <p>Developing an adaptive robotic workcell for small-parts assembly and inspection, integrating ROS2, vision-based perception, reinforcement learning, and edge deployment for real-time operation and system reliability.</p>
       </div>
       <div class="research-details">
-        
-          <span class="supervisor"><a href="https://shadhin.jamunabankbd.com" target="_blank" class="no-underline" rel="noopener noreferrer"><strong>Click Here</strong></a></span>
+          <span class="supervisor"><strong>Focus:</strong> ROS2, Computer Vision, Reinforcement Learning, Edge AI, Control Systems</span>
+          <span class="supervisor">
+              <a href="./pages/ros2-workcell.html" class="no-underline"><strong>View Details</strong></a>
+          </span>
       </div>
-</div>
-<div class="research-item">
-  <h3 class="research-title">Lead the team to get LEED’s Platinum Certification in Unifill Group</h3>
-  <div class="research-description">
-      <p>Directed sustainability and compliance activities that helped the organization achieve LEED Platinum certification standards.</p>
   </div>
-  <div class="research-details">
-    
-      <span class="supervisor"><a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" class="no-underline" rel="noopener noreferrer"><strong>Click Here</strong></a></span>
+
+  <!-- APCC -->
+  <div class="research-item">
+      <h3 class="research-title">Autonomous Path-Finding Cargo Cart (APCC) – EGR 604</h3>
+      <div class="research-description">
+          <p>Built an autonomous cargo cart prototype for navigation and material transport, integrating sensor-based path planning, control logic, and performance measurement to ensure repeatability, safety, and real-time response.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor">
+              <a href="https://www.linkedin.com/posts/anmnahidhasan_i-am-excited-to-share-our-final-project-for-activity-7402749305465364480-hHQ0" target="_blank" rel="noopener noreferrer" class="no-underline">
+                  <strong>View Project</strong>
+              </a>
+          </span>
+          <span class="supervisor">
+              <a href="./pages/apcc-project.html" class="no-underline"><strong>View Details</strong></a>
+          </span>
+      </div>
   </div>
-</div>
-  </section>
+
+  <!-- MLOps -->
+  <div class="research-item">
+      <h3 class="research-title">End-to-End MLOps Pipeline for Insurance Charge Prediction (AI 545)</h3>
+      <div class="research-description">
+          <p>Designed and deployed a complete machine learning pipeline for insurance charge prediction, including data ingestion, preprocessing, model training, experiment tracking, and interactive web-based inference.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor"><strong>Tools:</strong> Python, scikit-learn, MLflow, DVC, Docker, Streamlit</span>
+          <span class="supervisor">
+              <a href="./pages/mlops-insurance-project.html" class="no-underline"><strong>View Details</strong></a>
+          </span>
+      </div>
+  </div>
+
+  <!-- Jetson -->
+  <div class="research-item">
+      <h3 class="research-title">Jetson-Based Edge AI Deployment for Real-Time Vision</h3>
+      <div class="research-description">
+          <p>Implemented real-time object detection pipelines on NVIDIA Jetson devices, optimizing inference latency and resource utilization for embedded AI applications in constrained environments.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor"><strong>Tools:</strong> NVIDIA Jetson, OpenCV, MMDetection, Python</span>
+          <span class="supervisor">
+              <a href="./pages/jetson-edge-ai-project.html" class="no-underline"><strong>View Details</strong></a>
+          </span>
+      </div>
+  </div>
+
+  <!-- ROS2 Prototypes -->
+  <div class="research-item">
+      <h3 class="research-title">ROS2 Robotics Prototypes and System Integration</h3>
+      <div class="research-description">
+          <p>Developed modular ROS2 nodes for sensor data acquisition, robot control, and system coordination, exploring integration between perception, control, and distributed robotic architectures.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor"><strong>Focus:</strong> ROS2, Sensor Integration, Distributed Systems, Control</span>
+          <span class="supervisor">
+              <a href="./pages/ros2-system-integration-project.html" class="no-underline"><strong>View Details</strong></a>
+          </span>
+      </div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- Industry Projects -->
+  <!-- ===================== -->
+  <div class="project-category">
+      <h3 class="category-title">Industry and Digital Transformation Projects</h3>
+  </div>
+
+  <!-- HRIS -->
+  <div class="research-item">
+      <h3 class="research-title">Enterprise AI-Based Attendance and HRIS Deployment (170+ Branches)</h3>
+      <div class="research-description">
+          <p>Led the design and deployment of AI-driven attendance and HRIS systems across more than 170 branches, supporting over 5,000 employees and enabling centralized monitoring and automated reporting.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor">
+              <a href="./pages/Experinece.html" target="_blank" rel="noopener noreferrer" class="no-underline">
+                  <strong>System Overview</strong>
+              </a>
+          </span>
+      </div>
+  </div>
+
+  <!-- Paperless Banking -->
+  <div class="research-item">
+      <h3 class="research-title">Team Lead – Paperless Banking Transformation, Jamuna Bank PLC</h3>
+      <div class="research-description">
+          <p>Led cross-functional initiatives to digitize banking workflows, reduce manual processing, and improve operational efficiency across branches through paperless system implementation.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor">
+              <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" rel="noopener noreferrer" class="no-underline">
+                  <strong>Credential</strong>
+              </a>
+          </span>
+      </div>
+  </div>
+
+  <!-- Core Banking -->
+  <div class="research-item">
+      <h3 class="research-title">Core Banking and Mobile Financial System (Shadhin) Implementation</h3>
+      <div class="research-description">
+          <p>Implemented core banking and mobile financial services platforms, managing data migration, user acceptance testing (UAT), and security validation to ensure reliable production deployment.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor">
+              <a href="https://shadhin.jamunabankbd.com" target="_blank" rel="noopener noreferrer" class="no-underline">
+                  <strong>System Link</strong>
+              </a>
+          </span>
+      </div>
+  </div>
+
+  <!-- LEED -->
+  <div class="research-item">
+      <h3 class="research-title">LEED Platinum Certification Project – Unifill Group</h3>
+      <div class="research-description">
+          <p>Directed sustainability and compliance initiatives that contributed to achieving LEED Platinum certification, ensuring adherence to environmental standards and energy-efficient practices.</p>
+      </div>
+      <div class="research-details">
+          <span class="supervisor">
+              <a href="https://www.coursera.org/account/accomplishments/verify/7LNM36MYFZA9" target="_blank" rel="noopener noreferrer" class="no-underline">
+                  <strong>Certification</strong>
+              </a>
+          </span>
+      </div>
+  </div>
+
+</section>
                   <!-- Skills Section -->
                   <section id="skills">
                     <h2 class="section-title">Technical Expertise</h2>
@@ -526,7 +654,7 @@
     
       <div class="score-card">
         <div class="score-details">
-          <h3 class="score-details">GRE</h3>
+          <h3 class="test-name">GRE</h3>
           <span class="overall-score">Overall: 310</span>
           <div class="sub-scores">
             <span>Quant: 163</span>

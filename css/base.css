@@ -15,6 +15,9 @@
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 22px;
+    --heading-font: "Plus Jakarta Sans", "Inter", "Segoe UI", sans-serif;
+    --body-font: "Inter", "Segoe UI", sans-serif;
+    --topbar-height: 52px;
 }
 
 *,
@@ -30,13 +33,21 @@ html {
 }
 
 body {
-    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--body-font);
     line-height: 1.7;
     color: var(--text);
     background:
         radial-gradient(circle at 95% 10%, #d9e9ff 0, rgba(217, 233, 255, 0) 34%),
         radial-gradient(circle at 8% 70%, #e1f9f9 0, rgba(225, 249, 249, 0) 30%),
         var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--heading-font);
+    letter-spacing: -0.01em;
 }
 
 a {
@@ -64,4 +75,27 @@ li {
     height: 1.25rem;
     object-fit: contain;
     vertical-align: middle;
+}
+
+::selection {
+    background: #cfe0ff;
+    color: #0f2f57;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #e8eff8;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #9eb5d9;
+    border-radius: 999px;
+    border: 2px solid #e8eff8;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #7a9bca;
 }
